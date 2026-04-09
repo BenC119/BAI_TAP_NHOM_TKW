@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vanguard Hypercars | Trang chủ</title>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
 
@@ -16,7 +16,7 @@
             <div class="logo">
                 VANGUARD<span>HYPERCARS</span>
             </div>
-            
+
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -31,6 +31,8 @@
                     <li><a href="contact.html">Liên hệ</a></li>
                     <li><a href="news.html">Tin tức</a></li>
                     <li><a href="cart.html" id="cart-link">Giỏ hàng</a></li>
+                    <li><a href="login.html" class="auth-link">Đăng nhập</a></li>
+                    <li><a href="register.html" class="auth-link">Đăng ký</a></li>
                 </ul>
             </nav>
         </div>
@@ -67,7 +69,7 @@
         <div class="container">
             <h2 class="section-title fade-in">Tin tức mới nhất</h2>
             <div class="grid-container">
-                
+
                 <div class="news-card fade-in">
                     <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/bugatti_tourbillon_rear_close-up.jpg" alt="Bugatti Tourbillon" class="news-img">
                     <div class="news-content">
@@ -95,13 +97,13 @@
                     </div>
                 </div>
 
-                
+
             </div>
              <div class="link-to-news">
                     <a href="news.html" class="btn-primary">Xem tất cả tin tức</a>
                 </div>
         </div>
-       
+
     </section>
 
     <section id="newsletter" class="section-padding fade-in">
@@ -170,6 +172,9 @@
         <button class="toast-close"><i class="fas fa-times"></i></button>
     </div>
 
-    <script src="js/home.js"></script>
+    <script src="../js/auth-helper.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/database.js"></script>
+    <script src="../js/home.js"></script>
 </body>
 </html>

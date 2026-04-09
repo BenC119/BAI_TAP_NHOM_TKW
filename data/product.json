@@ -1,0 +1,56 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Ferrari SF90 Stradale",
+      "brand": "Ferrari",
+      "category": "Hypercar",
+      "price": 5000000,
+      "year": 2023,
+      "image": "https://example.com/ferrari-sf90.jpg",
+      "description": "Siêu xe hybrid với công nghệ F1 tiên tiến",
+      "specifications": {
+        "engine": "V12 Hybrid",
+        "horsepower": 986,
+        "topSpeed": 340,
+        "acceleration": "2.5s (0-100 km/h)"
+      },
+      "inStock": true,
+      "quantity": 2,
+      "createdAt": "2026-01-15T08:00:00Z",
+      "updatedAt": "2026-04-01T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Lamborghini Revuelto",
+      "brand": "Lamborghini",
+      "category": "Hypercar",
+      "price": 5500000,
+      "year": 2024,
+      "image": "https://example.com/lamborghini-revuelto.jpg",
+      "description": "Siêu xe hybrid V12 đầu tiên của Lamborghini",
+      "specifications": {
+        "engine": "V12 Hybrid",
+        "horsepower": 1001,
+        "topSpeed": 350,
+        "acceleration": "2.4s (0-100 km/h)"
+      },
+      "inStock": true,
+      "quantity": 1,
+      "createdAt": "2026-02-10T08:00:00Z",
+      "updatedAt": "2026-04-01T10:30:00Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Hypercar",
+      "description": "Siêu xe đỉnh cao"
+    },
+    {
+      "id": 2,
+      "name": "Sports Car",
+      "description": "Xe thể thao cao cấp"
+    }
+  ]
+}

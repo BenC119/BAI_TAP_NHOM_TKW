@@ -1,0 +1,53 @@
+{
+  "carts": [
+    {
+      "id": 1,
+      "userId": 1,
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Ferrari SF90 Stradale",
+          "quantity": 1,
+          "price": 5000000,
+          "total": 5000000,
+          "addedAt": "2026-04-01T10:30:00Z"
+        }
+      ],
+      "subtotal": 5000000,
+      "tax": 750000,
+      "total": 5750000,
+      "createdAt": "2026-04-01T10:30:00Z",
+      "updatedAt": "2026-04-01T10:30:00Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 1,
+      "orderNumber": "VH-2026-001",
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Ferrari SF90 Stradale",
+          "quantity": 1,
+          "price": 5000000,
+          "total": 5000000
+        }
+      ],
+      "subtotal": 5000000,
+      "tax": 750000,
+      "total": 5750000,
+      "status": "pending",
+      "paymentMethod": "bank_transfer",
+      "shippingAddress": {
+        "fullName": "Nguyễn Văn A",
+        "phone": "0901234567",
+        "address": "123 Luxury Avenue, Elite City",
+        "city": "Ho Chi Minh",
+        "country": "Vietnam"
+      },
+      "createdAt": "2026-04-01T10:30:00Z",
+      "updatedAt": "2026-04-01T10:30:00Z"
+    }
+  ]
+}
