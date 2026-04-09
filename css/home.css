@@ -79,6 +79,12 @@ header.scrolled {
     list-style: none;
     display: flex;
     gap: 30px;
+    align-items: center;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a {
@@ -88,6 +94,7 @@ header.scrolled {
     text-transform: uppercase;
     font-size: 13px;
     transition: 0.3s;
+    display: inline-block;
 }
 
 .nav-links a:hover, .nav-links a.active {
@@ -531,7 +538,7 @@ header.scrolled {
     .footer-grid { 
         grid-template-columns: 1fr 1fr; 
     }
-}
+
 
 @media (max-width: 768px) {
     .hero-content h1 { 
