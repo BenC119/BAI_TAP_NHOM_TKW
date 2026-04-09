@@ -1,0 +1,52 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "title": "Bugatti Tourbillon: Kỷ nguyên động cơ V16",
+      "slug": "bugatti-tourbillon-v16",
+      "image": "https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/bugatti_tourbillon_rear_close-up.jpg",
+      "date": "2026-04-10",
+      "author": "Vanguard Team",
+      "category": "Product Launch",
+      "excerpt": "Kế nhiệm huyền thoại Chiron, siêu phẩm Bugatti trình làng với khối động cơ V16 hybrid...",
+      "content": "Kế nhiệm huyền thoại Chiron, siêu phẩm Bugatti trình làng với khối động cơ V16 hybrid hút khí tự nhiên, sản sinh 1.800 mã lực và tốc độ tối đa vượt quá 400 km/h.",
+      "featured": true,
+      "createdAt": "2026-04-10T08:00:00Z",
+      "updatedAt": "2026-04-10T08:00:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Lô xe Aston Martin Valkyrie đầu tiên cập bến",
+      "slug": "aston-martin-valkyrie-asia",
+      "image": "https://welovecar.vn/wp-content/uploads/2019/07/wlc-sieu-xe-aston-martin-valkyrie-1.jpg",
+      "date": "2026-04-05",
+      "author": "Vanguard Team",
+      "category": "News",
+      "excerpt": "Siêu phẩm hypercar mang trọn vẹn công nghệ xe đua F1 của Aston Martin...",
+      "content": "Siêu phẩm hypercar mang trọn vẹn công nghệ xe đua F1 của Aston Martin đã chính thức được bàn giao cho những khách hàng VIP đầu tiên tại thị trường Châu Á.",
+      "featured": true,
+      "createdAt": "2026-04-05T08:00:00Z",
+      "updatedAt": "2026-04-05T08:00:00Z"
+    },
+    {
+      "id": 3,
+      "title": "Trải nghiệm nghệ thuật cơ khí Pagani Utopia",
+      "slug": "pagani-utopia-experience",
+      "image": "https://cdn.tienphong.vn/images/a7a4eb175a75567c9a7ae09768d70948690233f88c38f638a2d7abbddac90aa9a99bd841f818aa05e4643725d96211212f1f56b38bb6e9569a41da943d282d6e/pagani-utopia-5-5194.jpg",
+      "date": "2026-03-28",
+      "author": "Vanguard Team",
+      "category": "Event",
+      "excerpt": "Mẫu xe kế nhiệm Huayra mang đậm chất nghệ thuật cơ khí thủ công từ Ý...",
+      "content": "Mẫu xe kế nhiệm Huayra mang đậm chất nghệ thuật cơ khí thủ công từ Ý. Vanguard tự hào tổ chức buổi lái thử độc quyền dành riêng cho giới thượng lưu.",
+      "featured": true,
+      "createdAt": "2026-03-28T08:00:00Z",
+      "updatedAt": "2026-03-28T08:00:00Z"
+    }
+  ],
+  "categories": [
+    "Product Launch",
+    "News",
+    "Event",
+    "Review"
+  ]
+}

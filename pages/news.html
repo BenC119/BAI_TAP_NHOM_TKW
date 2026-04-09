@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin tức | Vanguard Hypercars</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+
+    <header id="header">
+        <div class="container flex-nav">
+            <div class="logo">
+                VANGUARD<span>HYPERCARS</span>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="home.html">Trang chủ</a></li>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="cars.html">Bộ sưu tập xe</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                    <li><a href="news.html" class="active">Tin tức</a></li>
+                    <li><a href="cart.html" id="cart-link">Giỏ hàng</a></li>
+                    <li><a href="login.html" class="auth-link">Đăng nhập</a></li>
+                    <li><a href="register.html" class="auth-link">Đăng ký</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="news-hero" class="hero" style="padding: 120px 0; background: linear-gradient(135deg, #0a1128 0%, #0d1a2e 100%);">
+        <div class="container">
+            <h1 style="font-size: 3.5rem; margin-bottom: 20px; color: #f0f4f8; font-weight: 700;">
+                Tin Tức Mới Nhất
+            </h1>
+            <p style="font-size: 1.2rem; color: #8a9bb8; max-width: 600px;">
+                Cập nhật những thông tin mới nhất về siêu xe, sự kiện đặc biệt và các ưu đãi độc quyền từ Vanguard Hypercars.
+            </p>
+        </div>
+    </section>
+
+    <section id="news-list" class="section-padding">
+        <div class="container">
+            <div class="grid-container" id="newsContainer" style="grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px;">
+                <!-- News will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo">
+                    VANGUARD<span>HYPERCARS</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Liên kết nhanh</h4>
+                <ul>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="cars.html">Bộ sưu tập xe</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                    <li><a href="news.html">Tin tức</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Liên hệ</h4>
+                <ul>
+                    <li>Email: vip@vanguardhypercars.com</li>
+                    <li>Điện thoại: (123) 456-7890</li>
+                    <li>Địa chỉ: 123 Luxury Avenue, Elite City</li>
+                </ul>
+            </div>
+
+            <div class="footer-col social-col">
+                <div class="follow">
+                    <h4>Theo dõi chúng tôi</h4>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Vanguard Hypercars. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="toast-notification" class="toast hidden">
+        <div class="toast-content">
+            <i class="fas fa-check-circle toast-icon"></i>
+            <div class="toast-message">
+                <h4>Thành công!</h4>
+                <p>Thông tin của bạn đang được nhân viên xử lý.</p>
+            </div>
+        </div>
+        <button class="toast-close"><i class="fas fa-times"></i></button>
+    </div>
+
+    <script src="../js/auth-helper.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/database.js"></script>
+    <script src="../js/home.js"></script>
+</body>
+</html>

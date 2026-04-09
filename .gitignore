@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Database - Dữ liệu nhạy cảm
+# data/auth.json          # Thông tin người dùng và mật khẩu
+# data/                   # Bỏ comment nếu muốn ignore toàn bộ folder data
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Build files
+dist/
+build/
+*.min.js
+*.min.css
+
+# Cache
+.cache/
+temp/
+tmp/
+
+# Config files (nếu có)
+config.json
+
+# Credentials
+credentials.json
+secrets.json
+config.local.json
