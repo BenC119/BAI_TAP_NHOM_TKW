@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. HIỆU ỨNG HEADER KHI CUỘN TRANG
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -20,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.toggle('active');
         });
 
-        // Đóng menu khi click vào 1 link
+    
         const links = document.querySelectorAll('.nav-links li a');
         links.forEach(link => {
             link.addEventListener('click', () => {
@@ -52,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         appearOnScroll.observe(fader);
     });
 
-    // 4. XỬ LÝ FORM ĐĂNG KÝ NHẬN TIN (TOAST NOTIFICATION)
+   
     const newsletterForm = document.querySelector('.newsletter-form');
     const toast = document.getElementById('toast-notification');
     const toastClose = document.querySelector('.toast-close');

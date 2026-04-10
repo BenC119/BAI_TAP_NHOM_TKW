@@ -64,6 +64,7 @@ header.scrolled {
     font-size: 22px;
     font-weight: 700;
     letter-spacing: 2px;
+    text-decoration: none;
 }
 
 .logo span { 
@@ -113,7 +114,6 @@ header.scrolled {
     border-radius: 3px;
 }
 
-/* Auth Container */
 .auth-container {
     min-height: 100vh;
     display: flex;

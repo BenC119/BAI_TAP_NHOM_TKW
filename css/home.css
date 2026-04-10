@@ -1,6 +1,4 @@
-/* =========================================
-   VARIABLES & RESET (Tông màu Midnight Blue)
-========================================= */
+
 :root {
     --bg-dark: #0a1128;      
     --bg-darker: #050814;    
@@ -45,9 +43,7 @@ body {
     color: var(--accent-gold);
 }
 
-/* =========================================
-   HEADER & NAVIGATION
-========================================= */
+
 header {
     position: fixed;
     width: 100%;
@@ -109,7 +105,7 @@ header.scrolled {
 .nav-links a:hover, 
 .nav-links a.active {
     color: var(--accent-gold);
-    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5); /* Thêm hiệu ứng phát sáng nhẹ cho theme neon */
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5); 
 }
 
 /* Hamburger Menu */
@@ -129,9 +125,7 @@ header.scrolled {
     border-radius: 3px;
 }
 
-/* =========================================
-   BUTTONS
-========================================= */
+
 .btn-primary {
     padding: 15px 40px;
     background-color: var(--accent-gold);
@@ -152,7 +146,7 @@ header.scrolled {
     box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
 }
 
-/* Nút Xem tất cả tin tức (Viền ngoài sáng) */
+
 .view-all-btn {
     text-align: center;
     margin-top: 50px;
@@ -179,9 +173,7 @@ header.scrolled {
     transform: translateY(-3px);
 }
 
-/* =========================================
-   HERO VIDEO SECTION
-========================================= */
+
 .video-hero {
     position: relative;
     height: 100vh;
@@ -203,7 +195,7 @@ header.scrolled {
     transform: translateX(-50%) translateY(-50%);
     z-index: -1;
     object-fit: cover;
-    opacity: 0.4; /* Tối hơn 1 chút để hợp với nền xanh thẳm */
+    opacity: 0.4;
 }
 
 .hero-content h1 {
@@ -221,9 +213,7 @@ header.scrolled {
     margin-bottom: 40px; 
 }
 
-/* =========================================
-   ABOUT PREVIEW SECTION
-========================================= */
+
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -244,9 +234,7 @@ header.scrolled {
     box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
-/* =========================================
-   LATEST NEWS SECTION
-========================================= */
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
@@ -318,9 +306,7 @@ header.scrolled {
     margin-bottom: 0;
 }
 
-/* =========================================
-   NEWSLETTER
-========================================= */
+
 .newsletter-container {
     text-align: center;
     max-width: 600px;
@@ -353,9 +339,7 @@ header.scrolled {
     box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
 }
 
-/* =========================================
-   TOAST NOTIFICATION 
-========================================= */
+
 .toast {
     position: fixed;
     bottom: 30px;
@@ -413,9 +397,7 @@ header.scrolled {
     color: var(--text-light); 
 }
 
-/* =========================================
-   FOOTER (Bố cục giãn rộng mới)
-========================================= */
+
 .site-footer {
     background-color: var(--bg-darker);
     padding: 70px 0 20px;
@@ -433,7 +415,7 @@ header.scrolled {
 
 .footer-col h4 { 
     color: var(--accent-gold); 
-    margin-bottom: 25px; 
+    margin: 0 0 25px 0; 
 }
 
 .footer-col ul { 
@@ -469,6 +451,10 @@ header.scrolled {
     width: 100%; 
 }
 
+.follow h4 {
+    margin-right: 25px;
+}
+
 .social-links a {
     display: flex; 
     align-items: center; 
@@ -496,13 +482,8 @@ header.scrolled {
     font-size: 0.85rem; 
     color: var(--text-muted);
 }
-.follow h4 {
-    margin-right: 25px;
-}
 
-/* =========================================
-   ANIMATIONS & RESPONSIVE
-========================================= */
+
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -591,13 +572,24 @@ header.scrolled {
     .footer-grid { 
         grid-template-columns: 1fr; 
         text-align: center; 
+        gap: 50px;
     }
     
-    .footer-col.social-col { 
-        align-items: center; 
-        text-align: center; 
+
+    .footer-col .logo {
+        justify-content: center;
+        margin-bottom: 10px;
     }
 
+    .footer-col.social-col { 
+         align-items: center ;
+        text-align: center; 
+        margin-bottom: 10px;
+    }
+    .footer-col h4 {
+        margin-bottom: 15px;
+        margin-left: 13px;
+    }
     
     .social-links { 
         justify-content: center; 
@@ -610,4 +602,5 @@ header.scrolled {
     .newsletter-form { 
         flex-direction: column; 
     }
+    
 }
