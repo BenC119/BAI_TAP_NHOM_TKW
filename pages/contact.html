@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanguard HyperCars | Liên hệ</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <header id="header">
+        <div class="container flex-nav">
+            <div class="logo">
+                <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right:8px;">
+                    <path d="M12 0L24 6.9282V20.7846L12 27.7128L0 20.7846V6.9282L12 0Z" fill="var(--accent-gold)"/>
+                    <path d="M12 4.6188L3.99996 9.2376V18.4752L12 23.094L20 18.4752V9.2376L12 4.6188Z" fill="#0A0A0A"/>
+                    <path d="M12 9.2376L7.99996 11.547V16.1658L12 18.4752L16 16.1658V11.547L12 9.2376Z" fill="var(--accent-gold)"/>
+                </svg>
+                VANGUARD HYPERCARS
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="home.html">Trang chủ</a></li>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="cars.html">Bộ sưu tập xe</a></li>
+                    <li><a href="contact.html" class="active">Liên hệ</a></li>
+                    <li><a href="news.html">Tin tức</a></li>
+                    <li><a href="cart.html" id="cart-link">Giỏ hàng</a></li>
+                    <li class="auth-link"><a href="login.html">ĐĂNG NHẬP</a></li>
+                    <li class="auth-link"><a href="register.html">ĐĂNG KÝ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="contact-hero" class="contact-hero section-padding">
+        <div class="container">
+            <div class="contact-hero-content fade-in">
+                <div class="yellow-dot"></div>
+                <h1>LIÊN HỆ</h1>
+                <p>Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-details" class="contact-details section-padding">
+        <div class="container contact-grid">
+            <div class="contact-info fade-in">
+                <h2 class="contact-title">Thông tin liên hệ</h2>
+                
+                <div class="info-item">
+                    <i class="fa-regular fa-envelope"></i>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p>contact@vanguardhypercars.com</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <div class="info-content">
+                        <h3>Điện thoại</h3>
+                        <p>(123) 456-7890</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="info-content">
+                        <h3>Địa chỉ</h3>
+                        <p>120 Yên Lãng, Phường Thịnh Quang, Đống Đa, Hà Nội</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fa-regular fa-calendar"></i>
+                    <div class="info-content">
+                        <h3>Giờ làm việc</h3>
+                        <p>Thứ Hai - Thứ Sáu: 9:00 - 18:00</p>
+                        <p>Thứ Bảy: 10:00 - 17:00</p>
+                        <p>Chủ Nhật: Đóng cửa</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-wrapper fade-in">
+                <div class="form-header">
+                    <div class="yellow-dot"></div>
+                    <h2 class="contact-title">Gửi tin nhắn cho chúng tôi</h2>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Họ và tên</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Chủ đề</label>
+                        <select id="subject" name="subject">
+                            <option value="Thông tin chung">Thông tin chung</option>
+                            <option value="Tư vấn mua xe">Tư vấn mua xe</option>
+                            <option value="Hỗ trợ kỹ thuật">Hỗ trợ kỹ thuật</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Tin nhắn</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary" style="margin-top: 10px; border: none; font-family: inherit; font-size: 1rem; cursor: pointer;">Gửi tin nhắn</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-map" class="contact-map section-padding">
+        <div class="container">
+            <div class="map-header fade-in">
+                <div class="yellow-dot"></div>
+                <h2 class="contact-title">Vị trí của chúng tôi</h2>
+            </div>
+            <div class="map-container fade-in">
+                <iframe src="https://maps.google.com/maps?q=120%20Y%C3%AAn%20L%C3%A3ng,%20Th%E1%BB%8Bnh%20Quang,%20%C4%90%E1%BB%91ng%20%C4%90a,%20H%C3%A0%20N%E1%BB%99i&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col" style="display: flex; align-items: center;">
+                <div class="logo">
+                     <svg width="20" height="24" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right:8px;">
+                        <path d="M12 0L24 6.9282V20.7846L12 27.7128L0 20.7846V6.9282L12 0Z" fill="var(--accent-gold)"/>
+                        <path d="M12 4.6188L3.99996 9.2376V18.4752L12 23.094L20 18.4752V9.2376L12 4.6188Z" fill="#050814"/>
+                        <path d="M12 9.2376L7.99996 11.547V16.1658L12 18.4752L16 16.1658V11.547L12 9.2376Z" fill="var(--accent-gold)"/>
+                    </svg>
+                    VANGUARD HYPERCARS
+                </div>
+            </div>
+
+            <div class="footer-col" style="text-align: center;">
+                <h4>Liên kết nhanh</h4>
+                <ul style="display: inline-block; text-align: center; padding: 0;">
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="cars.html">Bộ sưu tập xe</a></li>
+                    <li><a href="news.html">Tin tức</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col" style="text-align: center;">
+                <h4>Liên hệ</h4>
+                <ul style="display: inline-block; text-align: left; padding: 0;">
+                    <li>Email: contact@vanguardhypercars.com</li>
+                    <li>Điện thoại: (123) 456-7890</li>
+                    <li>Địa chỉ: 120 Yên Lãng, Phường Thịnh Quang, Đống Đa, Hà Nội</li>
+                </ul>
+            </div>
+
+            <div class="footer-col social-col" style="text-align: center;">
+                <h4>Theo dõi chúng tôi</h4>
+                <div class="social-links" style="justify-content: center;">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Vanguard HyperCars. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="auth-helper.js"></script>
+    <script src="auth.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>

@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanguard HyperCars | Bộ sưu tập</title>
+    <title>Bugatti phục chế huyền thoại Veyron Super Sport - Vanguard HyperCars</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="cars.css">
 </head>
 <body>
+
     <div class="custom-cursor" id="customCursor"></div>
 
     <header id="header">
@@ -22,7 +23,7 @@
                 </svg>
                 VANGUARD HYPERCARS
             </div>
-
+            
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -33,9 +34,9 @@
                 <ul class="nav-links" id="nav-links">
                     <li><a href="home.html">TRANG CHỦ</a></li>
                     <li><a href="about.html">GIỚI THIỆU</a></li>
-                    <li><a href="cars.html" class="active">BỘ SƯU TẬP XE</a></li>
+                    <li><a href="cars.html">BỘ SƯU TẬP XE</a></li>
                     <li><a href="contact.html">LIÊN HỆ</a></li>
-                    <li><a href="news.html">TIN TỨC</a></li>
+                    <li><a href="news.html" class="active">TIN TỨC</a></li>
                     <li><a href="cart.html" id="cart-link">GIỎ HÀNG</a></li>
                     <li class="auth-link"><a href="login.html">ĐĂNG NHẬP</a></li>
                     <li class="auth-link"><a href="register.html">ĐĂNG KÝ</a></li>
@@ -44,31 +45,39 @@
         </div>
     </header>
 
-    <section class="cars-hero contact-hero section-padding">
+    <section class="section-padding" style="padding-top: 150px; background-color: var(--bg-darker);">
         <div class="container">
-            <div class="contact-hero-content fade-in" style="display: flex; flex-direction: column; align-items: center;">
-                <div class="yellow-dot"></div>
-                <h1 class="contact-title" style="border: none; color: #fff;">BỘ SƯU TẬP XE</h1>
-                <p>Khám phá các cỗ máy tốc độ tối thượng của Vanguard HyperCars</p>
-            </div>
-        </div>
-    </section>
+            <div class="article-detail fade-in">
+                <h1>Bugatti phục chế huyền thoại Veyron Super Sport</h1>
+                <div class="article-meta">
+                    <span><i class="fa-regular fa-calendar" style="color:var(--accent-gold); margin-right:5px;"></i> 08/04/2026</span>
+                    <span><i class="fa-solid fa-folder" style="color:var(--accent-gold); margin-right:5px;"></i> Sự kiện</span>
+                </div>
+                
+                <p class="article-lead">Hãng siêu xe Pháp vừa hoàn tất quá trình phục chế nguyên mẫu Veyron Super Sport từng chinh phục kỷ lục tốc độ cách đây hơn một thập kỷ.</p>
+                
+                <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=1000&auto=format&fit=crop" alt="Bugatti phuc che huyen thoai Veyron Super Sport">
 
-    <section class="cars-list-section section-padding">
-        <div class="container">
-            <div class="cars-filters fade-in" id="cars-filters">
-                <button class="filter-btn active" data-filter="all">Tất cả</button>
-                <button class="filter-btn" data-filter="Hypercar">Hypercar</button>
-                <button class="filter-btn" data-filter="Sports Car">Sports Car</button>
+                <p>Chiếc xe được phục chế là một nguyên mẫu tiền sản xuất, từng được Bugatti sử dụng trong giai đoạn thử nghiệm và tham gia nhiều hoạt động truyền thông trên thế giới vào đầu những năm 2010. Xe đã lăn bánh khoảng hơn 70.000 km, con số hiếm thấy đối với một mẫu thuộc phân khúc hypercar vốn thường được bảo quản kỹ lưỡng.</p>
+                <p>Quá trình phục chế được thực hiện bởi bộ phận di sản La Maison Pur Sang của Bugatti, kéo dài khoảng 6 tháng nhằm đưa chiếc xe trở lại tình trạng gần như nguyên bản.</p>
+                <p>Ngoại thất của chiếc Veyron Super Sport được làm mới lại toàn bộ với lớp thân xe bằng sợi carbon và phủ một lớp sơn bóng, đồng thời khôi phục tông màu cam đặc trưng của phiên bản World Record. Nội thất với lớp da bọc mới, phục hồi hoàn toàn các ghế để trả lại hình dáng và sự thoải mái như khi chúng còn mới. Vô-lăng cũng được tân trang hoàn toàn, với tất cả các đường chỉ khâu và các tấm ốp bên trong.</p>
+                <p>Ngoài ra, một số bộ phận nguyên bản như hệ thống điện tử và làm mát được nâng cấp để đảm bảo khả năng vận hành ổn định.</p>
+                <p>Dù được nâng cấp nhiều chi tiết, Bugatti vẫn giữ lại những thành phần cốt lõi, bao gồm động cơ W16 8.0L quad-turbo trứ danh, kết hợp hộp số ly hợp kép 7 cấp. Đây chính là hệ truyền động đã giúp Veyron Super Sport đạt công suất khoảng 1.200 mã lực, đặt nền móng cho việc thiết lập kỷ lục tốc độ 431 km/h (từng là mức cao nhất đối với xe thương mại vào năm 2010).</p>
+                <p>Sau khi hoàn tất phục chế, chiếc xe đã được bàn giao cho một nhà sưu tập tư nhân. Bugatti cũng cung cấp đầy đủ hồ sơ lịch sử, ghi lại quá trình phát triển, sử dụng và phục hồi của mẫu xe.</p>
+                <p>Việc phục chế nguyên mẫu Veyron Super Sport không chỉ mang ý nghĩa kỹ thuật mà còn thể hiện nỗ lực của Bugatti trong việc gìn giữ di sản. Đây được xem là biểu tượng của một giai đoạn mà các hãng xe đua nhau chinh phục giới hạn tốc độ, mở đường cho những mẫu hypercar hiện đại sau này.</p>
+
+                <div class="article-source">
+                    <div><strong>Tác giả:</strong> Chí Nguyên (theo Top Gear)</div>
+                    <div><strong>Nguồn:</strong> <a href="https://vnexpress.net/bugatti-phuc-che-huyen-thoai-veyron-super-sport-5054208.html" target="_blank">Báo VnExpress</a></div>
+                </div>
             </div>
             
-            <div class="cars-grid fade-in" id="cars-grid">
-                <!-- Javascript will inject cars here -->
+            <div style="text-align: center; margin-top: 40px;" class="fade-in">
+                <a href="news.html" class="btn-primary" style="display: inline-block; border: none;">« Quay lại bảng tin</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer from home.html -->
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-col" style="display: flex; align-items: center;">
@@ -116,10 +125,8 @@
         </div>
     </footer>
 
-    <script src="database.js"></script>
     <script src="auth-helper.js"></script>
     <script src="auth.js"></script>
     <script src="home.js"></script>
-    <script src="cars.js"></script>
 </body>
 </html>
