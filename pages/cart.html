@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanguard Hypercars | Giỏ hàng</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/cart.css">
+</head>
+<body>
+
+    <header id="header">
+        <div class="container flex-nav">
+            <div class="logo">
+                VANGUARD<span>HYPERCARS</span>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="home.html">Trang chủ</a></li>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="cars.html">Bộ sưu tập xe</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                    <li><a href="news.html">Tin tức</a></li>
+                    <li><a href="cart.html" class="active" id="cart-link">Giỏ hàng</a></li>
+                    <li><a href="login.html" class="auth-link">Đăng nhập</a></li>
+                    <li><a href="register.html" class="auth-link">Đăng ký</a></li>
+                </ul>
+            </nav>
+
+
+        </div>
+    </header>
+
+    <section class="cart-container">
+        <div class="container">
+            <div class="cart-header">
+                <h1>Giỏ hàng của bạn</h1>
+                <p class="cart-subtitle">Quản lý các lựa chọn xe siêu sang của bạn</p>
+            </div>
+
+            <div class="cart-content">
+                <!-- Products Section -->
+                <div class="cart-items-section">
+                    <div class="items-header">
+                        <h2>Sản phẩm trong giỏ</h2>
+                        <span class="items-count">3 sản phẩm</span>
+                    </div>
+
+                    <!-- Cart Item 1 -->
+                    <div class="cart-item">
+                        <div class="item-image">
+                            <img src="https://www.jrmcm.com/content/uploads/2020/04/Ferrari_pho_003-Featured.jpg" alt="Ferrari SF90 Stradale">
+                        </div>
+
+                        <div class="item-info">
+                            <div class="item-header">
+                                <div>
+                                    <h3>Ferrari SF90 Stradale</h3>
+                                    <p class="item-desc">Siêu xe hybrid với công suất 986 mã lực, tốc độ tối đa 370 km/h</p>
+                                </div>
+                                <!-- <span class="item-label">SỐ LƯỢNG</span> -->
+                            </div>
+
+                            <div class="item-details-specs">
+                                <div class="specs-list">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Năm:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Màu:</span>
+                                        <span class="spec-value">Rosso Corsa</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Tùy chọn:</span>
+                                        <span class="spec-value">Full specs</span>
+                                    </div>
+                                </div>
+
+                                <div class="item-actions">
+                                    <div class="quantity-control">
+                                        <button class="qty-btn qty-minus">-</button>
+                                        <input type="number" value="1" min="1" class="qty-input">
+                                        <button class="qty-btn qty-plus">+</button>
+                                    </div>
+
+                                    <div class="item-price-section">
+                                        <p class="original-price">500,000,000 VNĐ</p>
+                                        <p class="final-price">500,000,000 VNĐ</p>
+                                    </div>
+
+                                    <button class="btn-remove" title="Xoá sản phẩm">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cart Item 2 -->
+                    <div class="cart-item">
+                        <div class="item-image">
+                            <img src="https://welovecar.vn/wp-content/uploads/2019/07/wlc-sieu-xe-aston-martin-valkyrie-1.jpg" alt="Aston Martin Valkyrie">
+                        </div>
+
+                        <div class="item-info">
+                            <div class="item-header">
+                                <div>
+                                    <h3>Aston Martin Valkyrie</h3>
+                                    <p class="item-desc">Hypercar F1 với công suất 1,160 mã lực, chỉ sản xuất 150 chiếc</p>
+                                </div>
+                                <!-- <span class="item-label">SỐ LƯỢNG</span> -->
+                            </div>
+
+                            <div class="item-details-specs">
+                                <div class="specs-list">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Năm:</span>
+                                        <span class="spec-value">2023</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Màu:</span>
+                                        <span class="spec-value">Pearl White</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Tùy chọn:</span>
+                                        <span class="spec-value">AMR Pro</span>
+                                    </div>
+                                </div>
+
+                                <div class="item-actions">
+                                    <div class="quantity-control">
+                                        <button class="qty-btn qty-minus">-</button>
+                                        <input type="number" value="1" min="1" class="qty-input">
+                                        <button class="qty-btn qty-plus">+</button>
+                                    </div>
+
+                                    <div class="item-price-section">
+                                        <p class="original-price">800,000,000 VNĐ</p>
+                                        <p class="final-price">800,000,000 VNĐ</p>
+                                    </div>
+
+                                    <button class="btn-remove" title="Xoá sản phẩm">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cart Item 3 -->
+                    <div class="cart-item">
+                        <div class="item-image">
+                            <img src="https://cdn.tienphong.vn/images/a7a4eb175a75567c9a7ae09768d70948690233f88c38f638a2d7abbddac90aa9a99bd841f818aa05e4643725d96211212f1f56b38bb6e9569a41da943d282d6e/pagani-utopia-5-5194.jpg" alt="Pagani Utopia">
+                        </div>
+
+                        <div class="item-info">
+                            <div class="item-header">
+                                <div>
+                                    <h3>Pagani Utopia</h3>
+                                    <p class="item-desc">Nghệ thuật cơ khí thủ công từ Ý, động cơ V12 twin-turbo 864 mã lực</p>
+                                </div>
+                                <!-- <span class="item-label">SỐ LƯỢNG</span> -->
+                            </div>
+
+                            <div class="item-details-specs">
+                                <div class="specs-list">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Năm:</span>
+                                        <span class="spec-value">2024</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Màu:</span>
+                                        <span class="spec-value">Rosso Magma</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Tùy chọn:</span>
+                                        <span class="spec-value">Bespoke</span>
+                                    </div>
+                                </div>
+
+                                <div class="item-actions">
+                                    <div class="quantity-control">
+                                        <button class="qty-btn qty-minus">-</button>
+                                        <input type="number" value="1" min="1" class="qty-input">
+                                        <button class="qty-btn qty-plus">+</button>
+                                    </div>
+
+                                    <div class="item-price-section">
+                                        <p class="original-price">600,000,000 VNĐ</p>
+                                        <p class="final-price">600,000,000 VNĐ</p>
+                                    </div>
+
+                                    <button class="btn-remove" title="Xoá sản phẩm">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary Section -->
+                <aside class="cart-summary">
+                    <div class="summary-box">
+                        <h3>Tóm tắt đơn hàng</h3>
+
+                        <div class="summary-row">
+                            <span>Tổng cộng:</span>
+                            <span class="price">1,900,000,000 VNĐ</span>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Phí vận chuyển:</span>
+                            <span class="price">50,000,000 VNĐ</span>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>VAT (10%):</span>
+                            <span class="price">190,000,000 VNĐ</span>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <div class="summary-row total">
+                            <span>Tổng thanh toán:</span>
+                            <span class="price">2,140,000,000 VNĐ</span>
+                        </div>
+
+                        <button class="btn-checkout">Tiến hành thanh toán</button>
+
+                        <a href="cars.html" class="btn-continue-shopping">
+                            <i class="fas fa-arrow-left"></i> Tiếp tục mua sắm
+                        </a>
+
+                        <div class="promo-section">
+                            <input type="text" class="promo-input" placeholder="Mã khuyến mãi">
+                            <button class="btn-apply-promo">Áp dụng</button>
+                        </div>
+                    </div>
+
+                    <div class="trust-badges">
+                        <div class="badge">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Giao hàng toàn quốc</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Thanh toán an toàn</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-undo"></i>
+                            <span>Hoàn trả 30 ngày</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Tại sao chọn Vanguard Hypercars</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-crown"></i>
+                    <h4>Dịch vụ VIP</h4>
+                    <p>Tư vấn riêng từ các chuyên gia siêu xe hàng đầu</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-certificate"></i>
+                    <h4>Chứng chỉ xác thực</h4>
+                    <p>Tất cả xe đều được xác thực và bảo hành chính hãng</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-cogs"></i>
+                    <h4>Bảo dưỡng toàn diện</h4>
+                    <p>Chế độ bảo dưỡng định kỳ miễn phí trong 2 năm đầu</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-headset"></i>
+                    <h4>Hỗ trợ 24/7</h4>
+                    <p>Đội ngũ hỗ trợ khách hàng luôn sẵn sàng phục vụ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo">
+                    VANGUARD<span>HYPERCARS</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Liên kết nhanh</h4>
+                <ul>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="cars.html">Bộ sưu tập xe</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                    <li><a href="news.html">Tin tức</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Liên hệ</h4>
+                <ul>
+                    <li>Email: vip@vanguardhypercars.com</li>
+                    <li>Điện thoại: (123) 456-7890</li>
+                    <li>Địa chỉ: 123 Luxury Avenue, Elite City</li>
+                </ul>
+            </div>
+
+            <div class="footer-col social-col">
+                <div class="follow">
+                    <h4>Theo dõi chúng tôi</h4>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Vanguard Hypercars. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/auth-helper.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/cart.js"></script>
+</body>
+</html>

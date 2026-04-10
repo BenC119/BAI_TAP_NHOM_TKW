@@ -54,6 +54,7 @@ header.scrolled {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 100%;
     padding: 0 3%;
 }
 
@@ -67,15 +68,34 @@ header.scrolled {
     color: var(--text-light);
     text-decoration: none;
     transition: 0.3s;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
-.logo span { color: var(--accent-gold); }
-.logo:hover { color: var(--accent-gold); }
+.logo span {
+    color: var(--accent-gold);
+}
+
+.logo:hover {
+    color: var(--accent-gold);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 30px;
+    align-items: center;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
 }
 
 .nav-links a {
@@ -85,10 +105,107 @@ header.scrolled {
     text-transform: uppercase;
     font-size: 13px;
     transition: 0.3s;
+    display: inline-block;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--accent-gold);
+}
+
+/* User Profile Dropdown */
+.user-profile-dropdown {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.user-profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: 1px solid var(--accent-gold);
+    color: var(--text-light);
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 13px;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.user-profile-btn:hover {
+    background-color: var(--accent-gold);
+    color: #000;
+}
+
+.user-profile-btn i:first-child {
+    font-size: 18px;
+}
+
+.user-profile-btn i:last-child {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.user-profile-btn.active i:last-child {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--card-bg);
+    border: 1px solid var(--accent-gold);
+    border-radius: 5px;
+    min-width: 200px;
+    margin-top: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    z-index: 1001;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: 0.3s;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+    flex: 1;
+    justify-content: center;
+}
+
+.dropdown-item:last-child {
+    border-right: none;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(0, 229, 255, 0.1);
+    color: var(--accent-gold);
+    padding-left: 25px;
+}
+
+.dropdown-item i {
+    font-size: 14px;
 }
 
 .hamburger {
@@ -105,6 +222,20 @@ header.scrolled {
     background-color: var(--text-light);
     transition: 0.3s;
     border-radius: 3px;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background-color: var(--accent-gold);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: var(--accent-gold);
 }
 
 /* Auth Container */
@@ -650,9 +781,86 @@ header.scrolled {
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+    .flex-nav {
+        max-width: 100%;
+        padding: 0 3%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        gap: 25px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .user-profile-btn {
+        font-size: 12px;
+        padding: 7px 12px;
+    }
+
+    .auth-wrapper {
+        max-width: 900px;
+    }
+
+    .footer-grid {
+        gap: 80px;
+    }
+}
+
 @media (max-width: 992px) {
+    .flex-nav {
+        padding: 0 3%;
+    }
+
+    .logo {
+        font-size: 19px;
+        gap: 8px;
+    }
+
+    .nav-links {
+        gap: 25px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .user-profile-btn {
+        font-size: 12px;
+        padding: 7px 12px;
+        gap: 6px;
+    }
+
+    .user-profile-btn i:first-child {
+        font-size: 16px;
+    }
+
+    .user-profile-btn i:last-child {
+        font-size: 10px;
+    }
+
+    .dropdown-menu {
+        min-width: 180px;
+    }
+
+    .dropdown-item {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
     .auth-wrapper {
         grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 100%;
+    }
+
+    .register-wrapper {
         gap: 30px;
     }
 
@@ -664,6 +872,10 @@ header.scrolled {
         padding: 40px 30px;
     }
 
+    .auth-panel-content {
+        padding: 20px;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         gap: 50px;
@@ -671,12 +883,31 @@ header.scrolled {
 }
 
 @media (max-width: 768px) {
-    header {
-        padding: 15px 0;
+    .container {
+        width: 90%;
     }
 
-    .hamburger {
-        display: flex;
+    header {
+        padding: 12px 0;
+    }
+
+    header.scrolled {
+        padding: 8px 0;
+    }
+
+    .flex-nav {
+        padding: 0 2%;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 17px;
+        gap: 6px;
+        letter-spacing: 1px;
+    }
+
+    nav {
+        width: 100%;
     }
 
     .nav-links {
@@ -691,18 +922,62 @@ header.scrolled {
         align-items: center;
         transition: 0.4s;
         gap: 30px;
+        list-style: none;
+        z-index: 999;
     }
 
     .nav-links.active {
         right: 0;
     }
 
-    .logo {
-        font-size: 18px;
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .user-profile-btn {
+        font-size: 11px;
+        padding: 6px 10px;
+        gap: 5px;
+        border-radius: 4px;
+    }
+
+    .user-profile-btn i:first-child {
+        font-size: 15px;
+    }
+
+    .user-profile-btn i:last-child {
+        font-size: 9px;
+    }
+
+    .user-name {
+        display: none;
+    }
+
+    .dropdown-menu {
+        right: -10px;
+        min-width: 160px;
+    }
+
+    .dropdown-item {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+
+    .dropdown-item i {
+        font-size: 13px;
     }
 
     .auth-container {
-        padding: 120px 15px 40px;
+        padding: 110px 15px 40px;
     }
 
     .auth-wrapper {
@@ -724,6 +999,7 @@ header.scrolled {
 
     .auth-subtitle {
         margin-bottom: 25px;
+        font-size: 0.9rem;
     }
 
     .form-row {
@@ -732,6 +1008,15 @@ header.scrolled {
 
     .form-group {
         margin-bottom: 18px;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    .form-group input {
+        font-size: 0.9rem;
     }
 
     .form-options {
@@ -744,9 +1029,45 @@ header.scrolled {
         padding: 0 12px;
     }
 
+    .input-wrapper i {
+        font-size: 0.9rem;
+        margin-right: 10px;
+    }
+
     .btn-auth {
         padding: 12px;
         font-size: 0.9rem;
+        width: 100%;
+    }
+
+    .btn-social {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .social-login {
+        gap: 12px;
+    }
+
+    .auth-divider {
+        font-size: 0.85rem;
+    }
+
+    .auth-switch {
+        font-size: 0.9rem;
+    }
+
+    .terms-check {
+        font-size: 0.8rem;
+    }
+
+    .remember-me {
+        font-size: 0.85rem;
+    }
+
+    .forgot-password {
+        font-size: 0.85rem;
     }
 
     .footer-grid {
@@ -764,6 +1085,12 @@ header.scrolled {
 
     .footer-col h4 {
         margin-bottom: 15px;
+        font-size: 0.95rem;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 12px;
+        font-size: 0.85rem;
     }
 
     .follow {
@@ -786,51 +1113,598 @@ header.scrolled {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    header.scrolled {
+        padding: 8px 0;
+    }
+
+    .flex-nav {
+        padding: 0 2%;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 15px;
+        letter-spacing: 0.5px;
+    }
+
+    .hamburger .bar {
+        width: 20px;
+        height: 2.5px;
+    }
+
+    .nav-links {
+        width: 75%;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .user-profile-btn {
+        font-size: 10px;
+        padding: 5px 8px;
+        gap: 4px;
+    }
+
+    .user-profile-btn i:first-child {
+        font-size: 14px;
+    }
+
+    .dropdown-menu {
+        min-width: 150px;
+        right: -5px;
+    }
+
+    .dropdown-item {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .auth-container {
+        padding: 105px 8px 30px;
+    }
+
+    .auth-wrapper {
+        gap: 15px;
+        max-width: 100%;
+    }
+
+    .register-wrapper {
+        gap: 15px;
+    }
+
     .auth-box,
     .auth-panel {
         padding: 25px 15px;
+        border-radius: 10px;
     }
 
     .auth-title {
         font-size: 1.3rem;
+        margin-bottom: 8px;
     }
 
     .auth-subtitle {
+        margin-bottom: 20px;
         font-size: 0.85rem;
+    }
+
+    .form-row {
+        gap: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
     }
 
     .form-group label {
         font-size: 0.85rem;
+        margin-bottom: 6px;
     }
 
     .form-group input {
         font-size: 0.85rem;
+        padding: 10px 0;
+    }
+
+    .input-wrapper {
+        padding: 0 10px;
+        border-radius: 6px;
+    }
+
+    .input-wrapper i {
+        font-size: 0.85rem;
+        margin-right: 8px;
+        min-width: 16px;
+    }
+
+    .toggle-password {
+        font-size: 0.8rem;
+        margin-left: 8px;
+    }
+
+    .error-message {
+        font-size: 0.75rem;
+        margin-top: 4px;
+    }
+
+    .password-strength {
+        margin-top: 6px;
+        height: 3px;
+    }
+
+    .remember-me {
+        font-size: 0.8rem;
+        gap: 6px;
+    }
+
+    .remember-me input {
+        width: 16px;
+        height: 16px;
+    }
+
+    .forgot-password {
+        font-size: 0.8rem;
+    }
+
+    .terms-check {
+        font-size: 0.75rem;
+        gap: 8px;
+    }
+
+    .terms-check input {
+        width: 16px;
+        height: 16px;
+        margin-top: 2px;
+    }
+
+    .form-options {
+        gap: 12px;
+    }
+
+    .btn-auth {
+        padding: 11px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    .btn-auth:disabled {
+        padding: 11px;
+    }
+
+    .social-login {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .btn-social {
+        width: 38px;
+        height: 38px;
+        font-size: 0.95rem;
+        border-radius: 6px;
+    }
+
+    .auth-divider {
+        margin: 20px 0;
+        font-size: 0.8rem;
+    }
+
+    .auth-divider span {
+        padding: 0 10px;
+    }
+
+    .auth-switch {
+        font-size: 0.85rem;
+        margin-top: 15px;
+    }
+
+    .auth-switch a {
+        font-size: 0.85rem;
+    }
+
+    .auth-panel-content h2 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .auth-panel-content > p {
+        font-size: 0.9rem;
+        margin-bottom: 25px;
     }
 
     .features-list {
-        gap: 15px;
+        gap: 12px;
     }
 
     .feature-item {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        gap: 10px;
+    }
+
+    .feature-item i {
+        font-size: 1.1rem;
+        min-width: 20px;
     }
 
     .footer-grid {
         gap: 20px;
+        padding: 0 2%;
     }
 
     .footer-col h4 {
         font-size: 0.9rem;
+        margin-bottom: 12px;
     }
 
     .footer-col ul li {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
+        font-size: 0.8rem;
+    }
+
+    .footer-col ul li a {
+        font-size: 0.8rem;
+    }
+
+    .social-links {
+        gap: 10px;
+    }
+
+    .social-links a {
+        width: 35px;
+        height: 35px;
         font-size: 0.85rem;
+    }
+
+    .site-footer {
+        padding: 35px 0 15px;
+    }
+
+    .footer-bottom {
+        padding-top: 15px;
+        font-size: 0.75rem;
     }
 
     .toast {
         min-width: auto;
-        width: calc(100% - 40px);
+        width: calc(100% - 30px);
+        padding: 12px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 0.85rem;
+    }
+
+    .toast-icon {
+        font-size: 20px;
+    }
+
+    .toast-message h4 {
+        font-size: 0.95rem;
+        margin-bottom: 3px;
+    }
+
+    .toast-message p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+
+    header {
+        padding: 8px 0;
+    }
+
+    .flex-nav {
+        padding: 0 2%;
+        gap: 8px;
+    }
+
+    .logo {
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        gap: 4px;
+    }
+
+    .logo span {
+        font-size: 14px;
+    }
+
+    .hamburger .bar {
+        width: 18px;
+        height: 2px;
+    }
+
+    .nav-links {
+        width: 75%;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .user-profile-btn {
+        font-size: 9px;
+        padding: 4px 6px;
+        gap: 3px;
+        border-radius: 3px;
+        border: 0.5px solid var(--accent-gold);
+    }
+
+    .user-profile-btn i:first-child {
+        font-size: 12px;
+    }
+
+    .user-profile-btn i:last-child {
+        font-size: 8px;
+    }
+
+    .dropdown-menu {
+        min-width: 140px;
+        right: 0;
+        margin-top: 8px;
+        border-radius: 4px;
+    }
+
+    .dropdown-item {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+        gap: 8px;
+    }
+
+    .dropdown-item i {
+        font-size: 12px;
+    }
+
+    .auth-container {
+        padding: 100px 6px 25px;
+    }
+
+    .auth-wrapper {
+        gap: 10px;
+    }
+
+    .auth-box,
+    .auth-panel {
+        padding: 20px 12px;
+        border-radius: 8px;
+    }
+
+    .auth-title {
+        font-size: 1.2rem;
+        margin-bottom: 6px;
+    }
+
+    .auth-subtitle {
+        margin-bottom: 18px;
+        font-size: 0.8rem;
+    }
+
+    .form-row {
+        gap: 12px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    .form-group label {
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+
+    .form-group input {
+        font-size: 0.8rem;
+        padding: 8px 0;
+    }
+
+    .form-group input::placeholder {
+        font-size: 0.75rem;
+    }
+
+    .input-wrapper {
+        padding: 0 8px;
+        border-radius: 5px;
+    }
+
+    .input-wrapper i {
+        font-size: 0.75rem;
+        margin-right: 6px;
+        min-width: 14px;
+    }
+
+    .toggle-password {
+        font-size: 0.75rem;
+        padding: 3px;
+    }
+
+    .error-message {
+        font-size: 0.7rem;
+    }
+
+    .password-strength {
+        margin-top: 5px;
+        height: 2px;
+    }
+
+    .form-options {
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .remember-me {
+        font-size: 0.75rem;
+        gap: 5px;
+    }
+
+    .remember-me input {
+        width: 14px;
+        height: 14px;
+    }
+
+    .forgot-password {
+        font-size: 0.75rem;
+    }
+
+    .terms-check {
+        font-size: 0.7rem;
+        gap: 6px;
+        margin-bottom: 15px;
+    }
+
+    .terms-check input {
+        width: 14px;
+        height: 14px;
+        margin-top: 1px;
+    }
+
+    .terms-check a {
+        font-size: 0.7rem;
+    }
+
+    .btn-auth {
+        padding: 10px;
+        font-size: 0.8rem;
+        letter-spacing: 0px;
+    }
+
+    .social-login {
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+
+    .btn-social {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    .auth-divider {
+        margin: 15px 0;
+        font-size: 0.75rem;
+    }
+
+    .auth-divider span {
+        padding: 0 8px;
+    }
+
+    .auth-switch {
+        font-size: 0.8rem;
+        margin-top: 12px;
+    }
+
+    .auth-switch a {
+        font-size: 0.8rem;
+    }
+
+    .auth-panel-content h2 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+
+    .auth-panel-content > p {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    .features-list {
+        gap: 10px;
+    }
+
+    .feature-item {
+        font-size: 0.75rem;
+        gap: 8px;
+    }
+
+    .feature-item i {
+        font-size: 1rem;
+        min-width: 16px;
+    }
+
+    .footer-grid {
+        gap: 15px;
+        padding: 0 2%;
+    }
+
+    .footer-col {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-col h4 {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 6px;
+    }
+
+    .footer-col ul li a {
+        font-size: 0.75rem;
+    }
+
+    .social-links {
+        gap: 8px;
+    }
+
+    .social-links a {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+
+    .site-footer {
+        padding: 30px 0 12px;
+    }
+
+    .footer-bottom {
+        padding-top: 12px;
+        font-size: 0.7rem;
+    }
+
+    .toast {
+        min-width: auto;
+        width: calc(100% - 20px);
+        padding: 10px;
+        bottom: 10px;
+        right: 10px;
+        font-size: 0.8rem;
+    }
+
+    .toast-icon {
+        font-size: 18px;
+    }
+
+    .toast-message h4 {
+        font-size: 0.9rem;
+        margin-bottom: 2px;
+    }
+
+    .toast-message p {
+        font-size: 0.75rem;
+    }
+
+    .toast-close {
+        font-size: 16px;
+        margin-left: 10px;
     }
 }
