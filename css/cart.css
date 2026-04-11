@@ -116,10 +116,6 @@ header.scrolled {
 }
 
 /* User Profile Dropdown */
-.user-profile-item {
-    position: relative;
-}
-
 .user-profile-dropdown {
     position: relative;
     flex-shrink: 0;
