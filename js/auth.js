@@ -248,6 +248,12 @@ class AuthManager {
                             <a href="#" class="dropdown-item profile-link">
                                 <i class="fas fa-user"></i> Tài khoản
                             </a>
+                            <a href="#" class="dropdown-item profile-link">
+                                <i class="fas fa-user"></i> Yêu thích
+                            </a>
+                            <a href="#" class="dropdown-item profile-link">
+                                <i class="fas fa-user"></i> Đơn hàng
+                            </a>
                             <a href="#" class="dropdown-item logout-link">
                                 <i class="fas fa-sign-out-alt"></i> Đăng xuất
                             </a>
