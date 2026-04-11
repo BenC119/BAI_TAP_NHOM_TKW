@@ -208,20 +208,6 @@ header.scrolled {
     font-size: 14px;
 }
 
-/* Auth Links */
-.nav-links a.auth-link {
-    padding: 8px 15px;
-    border: 1px solid var(--accent-gold);
-    border-radius: 5px;
-    transition: 0.3s;
-    display: inline-block;
-}
-
-.nav-links a.auth-link:hover {
-    background-color: var(--accent-gold);
-    color: #000;
-}
-
 /* Cart Container */
 .cart-container {
     min-height: 100vh;
