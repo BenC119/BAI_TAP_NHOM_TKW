@@ -1,4 +1,3 @@
-// Cart functionality
 class CartManager {
     constructor() {
         this.initializeEventListeners();
@@ -6,25 +5,20 @@ class CartManager {
     }
 
     initializeEventListeners() {
-        // Quantity controls
         document.querySelectorAll('.qty-btn').forEach(btn => {
             btn.addEventListener('click', (e) => this.handleQuantityChange(e));
         });
 
-        // Remove button
         document.querySelectorAll('.btn-remove').forEach(btn => {
             btn.addEventListener('click', (e) => this.handleRemoveItem(e));
         });
 
-        // Apply promo
         document.querySelector('.btn-apply-promo')?.addEventListener('click', () => {
             this.applyPromo();
         });
 
-        // Header scroll effect
         window.addEventListener('scroll', () => this.updateHeader());
 
-        // Hamburger menu and user profile
         this.initializeMobileMenu();
         this.initializeUserProfile();
     }
@@ -50,7 +44,6 @@ class CartManager {
         const btn = e.target.closest('.btn-remove');
         const item = btn.closest('.cart-item');
 
-        // Animate removal
         item.style.animation = 'slideOut 0.4s ease-out forwards';
         setTimeout(() => {
             item.remove();
@@ -67,7 +60,6 @@ class CartManager {
             itemsCount.textContent = `${items.length} sản phẩm`;
         }
 
-        // Recalculate totals
         this.updateTotals();
     }
 
@@ -80,12 +72,10 @@ class CartManager {
             const quantity = parseInt(item.querySelector('.qty-input').value) || 1;
             const itemTotal = price * quantity;
 
-            // Update final price in item
             item.querySelector('.final-price').textContent = this.formatPrice(itemTotal);
             subtotal += itemTotal;
         });
 
-        // Update summary
         const shippingFee = 50000000;
         const tax = subtotal * 0.1;
         const total = subtotal + shippingFee + tax;
@@ -124,7 +114,6 @@ class CartManager {
             return;
         }
 
-        // Mock promo codes
         const promos = {
             'VANGUARD10': 0.1,
             'LUXURY20': 0.2,
@@ -184,7 +173,6 @@ class CartManager {
                 navLinks.classList.toggle('active');
             });
 
-            // Close menu when link is clicked
             navLinks.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     hamburger.classList.remove('active');
@@ -195,19 +183,15 @@ class CartManager {
     }
 
     initializeUserProfile() {
-        // Use auth.updateHeaderDisplay() like home.js does
-        // This handles user profile dropdown automatically
         if (typeof auth !== 'undefined') {
             auth.updateHeaderDisplay();
         }
     }
 }
 
-// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     new CartManager();
 
-    // Add slide out animation
     const style = document.createElement('style');
     style.textContent = `
         @keyframes slideOut {

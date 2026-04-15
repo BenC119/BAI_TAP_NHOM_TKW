@@ -1,14 +1,8 @@
-/**
- * Register Form Handler - Pure JavaScript (No Backend)
- * Uses auth-helper.js for common functions
- */
-
 document.addEventListener('DOMContentLoaded', function() {
     const registerForm = document.getElementById('registerForm');
     const regPassword = document.getElementById('reg-password');
 
     if (registerForm) {
-        // Password strength meter
         if (regPassword) {
             regPassword.addEventListener('input', function() {
                 updatePasswordStrength(this.value);
@@ -25,11 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const password = document.getElementById('reg-password').value;
             const confirmPassword = document.getElementById('reg-confirm').value;
 
-            // Clear previous errors
             clearErrors();
             let isValid = true;
 
-            // Validation
             if (!firstName) {
                 showError('reg-firstname', 'Vui lòng nhập tên');
                 isValid = false;
@@ -62,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (!isValid) return;
 
-            // Perform registration using auth manager
             const result = await auth.register(firstName, lastName, email, phone, password);
 
             if (!result.success) {
@@ -72,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             showToast(result.message, 'success');
 
-            // Redirect after 1.5 seconds
             setTimeout(() => {
                 window.location.href = 'home.html';
             }, 1500);
