@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanguard Hypercars | Trang chủ</title>
+    <title>Vanguard HyperCars | Trang chủ</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="home.css">
 </head>
+
 <body>
+
+    <div class="custom-cursor" id="customCursor"></div>
 
     <header id="header">
         <div class="container flex-nav">
             <div class="logo">
-                VANGUARD<span>HYPERCARS</span>
+                <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="margin-right:8px;">
+                    <path d="M12 0L24 6.9282V20.7846L12 27.7128L0 20.7846V6.9282L12 0Z" fill="var(--accent-gold)" />
+                    <path d="M12 4.6188L3.99996 9.2376V18.4752L12 23.094L20 18.4752V9.2376L12 4.6188Z" fill="#0A0A0A" />
+                    <path d="M12 9.2376L7.99996 11.547V16.1658L12 18.4752L16 16.1658V11.547L12 9.2376Z"
+                        fill="var(--accent-gold)" />
+                </svg>
+                VANGUARD HYPERCARS
             </div>
 
             <div class="hamburger" id="hamburger">
@@ -25,131 +37,149 @@
 
             <nav>
                 <ul class="nav-links" id="nav-links">
-                    <li><a href="home.html" class="active">Trang chủ</a></li>
-                    <li><a href="about.html">Giới thiệu</a></li>
-                    <li><a href="cars.html">Bộ sưu tập xe</a></li>
-                    <li><a href="contact.html">Liên hệ</a></li>
-                    <li><a href="news.html">Tin tức</a></li>
-                    <li><a href="cart.html" id="cart-link">Giỏ hàng</a></li>
-                    <li><a href="login.html" class="auth-link">Đăng nhập</a></li>
-                    <li><a href="register.html" class="auth-link">Đăng ký</a></li>
+                    <li><a href="home.html" class="active">TRANG CHỦ</a></li>
+                    <li><a href="about.html">GIỚI THIỆU</a></li>
+                    <li><a href="cars.html">BỘ SƯU TẬP XE</a></li>
+                    <li><a href="contact.html">LIÊN HỆ</a></li>
+                    <li><a href="news.html">TIN TỨC</a></li>
+                    <li class="auth-link"><a href="login.html">ĐĂNG NHẬP</a></li>
+                    <li class="auth-link"><a href="register.html">ĐĂNG KÝ</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="hero" class="hero video-hero">
-        <video autoplay muted loop playsinline class="hero-bg-video" onerror="this.style.display='none'">
-            <source src="../video/baner.mp4" type="video/mp4">
-            <img src="../assets/hero-bg.jpg" alt="Hero Banner" style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+    <!-- Hero Video Section -->
+    <section class="video-hero">
+        <video autoplay loop muted playsinline class="hero-bg-video">
+            <source src="baner (1).mp4" type="video/mp4">
         </video>
-        <div class="hero-content fade-in">
-            <h1>VANGUARD <span>HYPERCARS</span></h1>
-            <p>Trải nghiệm đẳng cấp với bộ sưu tập siêu xe độc quyền</p>
-            <a href="cars.html" class="btn-primary">Khám phá ngay</a>
-        </div>
-    </section>
-
-    <section id="about-preview" class="section-padding">
         <div class="container">
-            <h2 class="section-title fade-in">Về Vanguard Hypercars</h2>
-            <div class="about-grid">
-                <div class="about-text fade-in">
-                    <p>Vanguard Hypercars là đại lý siêu xe hàng đầu Việt Nam, chuyên cung cấp những mẫu xe độc quyền và giới hạn từ các thương hiệu danh tiếng nhất thế giới.</p>
-                    <p>Với hơn 10 năm kinh nghiệm, chúng tôi tự hào mang đến cho khách hàng không chỉ những chiếc xe đẳng cấp mà còn là dịch vụ chăm sóc khách hàng tận tâm và chuyên nghiệp.</p>
-                    <a href="about.html" class="btn-primary">Tìm hiểu thêm</a>
-                </div>
-                <div class="about-image fade-in">
-                    <img src="https://www.jrmcm.com/content/uploads/2020/04/Ferrari_pho_003-Featured.jpg" alt="Vanguard Hypercars Showroom">
-                </div>
+            <div class="hero-content fade-in">
+                <h1><span>VANGUARD</span> HYPERCARS</h1>
+                <p>Khám phá bộ sưu tập siêu xe đẳng cấp thế giới</p>
+                <a href="cars.html" class="btn-primary">KHÁM PHÁ NGAY</a>
             </div>
         </div>
     </section>
 
-    <section id="latest-news" class="section-padding bg-darker">
-        <div class="container">
-            <h2 class="section-title fade-in">Tin tức mới nhất</h2>
-            <div class="grid-container">
-
-                <div class="news-card fade-in">
-                    <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/bugatti_tourbillon_rear_close-up.jpg" alt="Bugatti Tourbillon" class="news-img">
-                    <div class="news-content">
-                        <span class="news-date">10/04/2026</span>
-                        <h3 class="news-title">Bugatti Tourbillon: Kỷ nguyên động cơ V16</h3>
-                        <p class="news-desc">Kế nhiệm huyền thoại Chiron, siêu phẩm Bugatti trình làng với khối động cơ V16 hybrid hút khí tự nhiên, sản sinh 1.800 mã lực và tốc độ tối đa vượt quá 400 km/h.</p>
-                    </div>
-                </div>
-
-                <div class="news-card fade-in">
-                    <img src="https://welovecar.vn/wp-content/uploads/2019/07/wlc-sieu-xe-aston-martin-valkyrie-1.jpg" alt="Aston Martin Valkyrie" class="news-img">
-                    <div class="news-content">
-                        <span class="news-date">05/04/2026</span>
-                        <h3 class="news-title">Lô xe Aston Martin Valkyrie đầu tiên cập bến</h3>
-                        <p class="news-desc">Siêu phẩm hypercar mang trọn vẹn công nghệ xe đua F1 của Aston Martin đã chính thức được bàn giao cho những khách hàng VIP đầu tiên tại thị trường Châu Á.</p>
-                    </div>
-                </div>
-
-                <div class="news-card fade-in">
-                    <img src="https://cdn.tienphong.vn/images/a7a4eb175a75567c9a7ae09768d70948690233f88c38f638a2d7abbddac90aa9a99bd841f818aa05e4643725d96211212f1f56b38bb6e9569a41da943d282d6e/pagani-utopia-5-5194.jpg" alt="Pagani Utopia" class="news-img">
-                    <div class="news-content">
-                        <span class="news-date">28/03/2026</span>
-                        <h3 class="news-title">Trải nghiệm nghệ thuật cơ khí Pagani Utopia</h3>
-                        <p class="news-desc">Mẫu xe kế nhiệm Huayra mang đậm chất nghệ thuật cơ khí thủ công từ Ý. Vanguard tự hào tổ chức buổi lái thử độc quyền dành riêng cho giới thượng lưu.</p>
-                    </div>
-                </div>
-
-
+    <!-- About Preview Section -->
+    <section class="section-padding">
+        <div class="container about-grid">
+            <div class="about-text fade-in">
+                <h2 class="section-title" style="text-align: left;">Đỉnh Cao Tốc Độ</h2>
+                <p>Tại Vanguard HyperCars, chúng tôi mang đến những cỗ máy tốc độ tuyệt đỉnh, nơi nghệ thuật thiết kế hòa
+                    quyện cùng công nghệ tiên phong.</p>
+                <p>Mỗi chiếc xe là một kiệt tác độc bản, được chế tác để đánh thức mọi giác quan và khẳng định đẳng cấp
+                    của chủ nhân.</p>
+                <a href="about.html" class="btn-primary" style="margin-top: 15px;">TÌM HIỂU THÊM</a>
             </div>
-             <div class="link-to-news">
-                    <a href="news.html" class="btn-primary">Xem tất cả tin tức</a>
-                </div>
+            <div class="about-image fade-in">
+                <img src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?q=80&w=1000&auto=format&fit=crop"
+                    alt="Vanguard Hypercars About">
+            </div>
         </div>
-
     </section>
 
-    <section id="newsletter" class="section-padding fade-in">
-        <div class="container newsletter-container">
-            <h2 class="section-title">Đăng ký nhận tin</h2>
-            <p class="newsletter-desc">Đăng ký để nhận những thông tin mới nhất về siêu xe và các sự kiện độc quyền.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Email của bạn" required>
-                <button type="submit" class="btn-primary">Đăng ký</button>
+    <!-- Latest News Dashboard Section -->
+    <section class="bg-darker section-padding">
+        <div class="container">
+            <h2 class="section-title fade-in">Tin Tức Mới Nhất</h2>
+            <div class="grid-container fade-in">
+                <!-- Card 1 -->
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=1000&auto=format&fit=crop"
+                        alt="Bugatti News" class="news-img">
+                    <div class="news-content">
+                        <div class="news-date">08/04/2026</div>
+                        <h3 class="news-title">Bugatti phục chế huyền thoại Veyron</h3>
+                        <p class="news-desc">Hãng siêu xe Pháp vừa hoàn tất quá trình phục chế nguyên mẫu Veyron Super
+                            Sport từng chinh phục kỷ lục tốc độ.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="news-card">
+                    <img src="https://i1-vnexpress.vnecdn.net/2026/02/27/Bugatti-Mistral-1-5244-1772169-3624-2074-1772169743.jpg?w=0&h=0&q=100&dpr=1&fit=crop&s=ky-2wjQuMv9aTA4_FyuL2A"
+                        alt="Bugatti W16 Mistral" class="news-img">
+                    <div class="news-content">
+                        <div class="news-date">08/04/2026</div>
+                        <h3 class="news-title">Siêu phẩm W16 Mistral lấy cảm hứng ngọc trai</h3>
+                        <p class="news-desc">Mẫu xe mui trần được đặt riêng thông qua bộ phận cá nhân hóa, mất 3 năm để
+                            phát triển.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=1000&auto=format&fit=crop"
+                        alt="Pagani Huayra 70" class="news-img">
+                    <div class="news-content">
+                        <div class="news-date">08/04/2026</div>
+                        <h3 class="news-title">Pagani Huayra 70 giới hạn 3 chiếc</h3>
+                        <p class="news-desc">Nhân dịp sinh nhật 70 tuổi của Horacio Pagani, phiên bản kỉ niệm ra mắt với
+                            hộp số sàn độc đáo.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;" class="fade-in">
+                <a href="news.html" class="btn-primary">XEM TẤT CẢ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="section-padding fade-in" style="border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container newsletter-container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <h2 class="section-title" style="margin-bottom: 15px;">Đăng ký nhận tin</h2>
+            <p class="newsletter-desc" style="color: var(--text-muted); margin-bottom: 30px; line-height: 1.6;">Đăng ký
+                để nhận những thông tin mới nhất về siêu xe và các sự kiện độc quyền.</p>
+            <form class="newsletter-form" style="display: flex; gap: 10px;">
+                <input type="email" placeholder="Email của bạn" required
+                    style="flex: 1; padding: 15px; background: #111; border: 1px solid #333; color: #fff; border-radius: 5px; outline: none; font-family: inherit;">
+                <button type="submit" class="btn-primary" style="border: none; cursor: none; font-family: inherit;">Đăng
+                    ký</button>
             </form>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="container footer-grid">
-            <div class="footer-col">
+            <div class="footer-col" style="display: flex; align-items: center;">
                 <div class="logo">
-                    VANGUARD<span>HYPERCARS</span>
+                    <svg width="20" height="24" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style="margin-right:8px;">
+                        <path d="M12 0L24 6.9282V20.7846L12 27.7128L0 20.7846V6.9282L12 0Z" fill="var(--accent-gold)" />
+                        <path d="M12 4.6188L3.99996 9.2376V18.4752L12 23.094L20 18.4752V9.2376L12 4.6188Z"
+                            fill="#050814" />
+                        <path d="M12 9.2376L7.99996 11.547V16.1658L12 18.4752L16 16.1658V11.547L12 9.2376Z"
+                            fill="var(--accent-gold)" />
+                    </svg>
+                    VANGUARD HYPERCARS
                 </div>
             </div>
 
-            <div class="footer-col">
+            <div class="footer-col" style="text-align: center;">
                 <h4>Liên kết nhanh</h4>
-                <ul>
+                <ul style="display: inline-block; text-align: center; padding: 0;">
                     <li><a href="about.html">Giới thiệu</a></li>
                     <li><a href="cars.html">Bộ sưu tập xe</a></li>
-                    <li><a href="contact.html">Liên hệ</a></li>
                     <li><a href="news.html">Tin tức</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
                 </ul>
             </div>
 
-            <div class="footer-col">
+            <div class="footer-col" style="text-align: center;">
                 <h4>Liên hệ</h4>
-                <ul>
-                    <li>Email: vip@vanguardhypercars.com</li>
+                <ul style="display: inline-block; text-align: left; padding: 0;">
+                    <li>Email: contact@vanguardhypercars.com</li>
                     <li>Điện thoại: (123) 456-7890</li>
-                    <li>Địa chỉ: 123 Luxury Avenue, Elite City</li>
+                    <li>Địa chỉ: 120 Yên Lãng, Phường Thịnh Quang, Đống Đa, Hà Nội</li>
                 </ul>
             </div>
 
-            <div class="footer-col social-col">
-                <div class="follow">
-                    <h4>Theo dõi chúng tôi</h4>
-                </div>
-                <div class="social-links">
+            <div class="footer-col social-col" style="text-align: center;">
+                <h4>Theo dõi chúng tôi</h4>
+                <div class="social-links" style="justify-content: center;">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -158,24 +188,13 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Vanguard Hypercars. All rights reserved.</p>
+            <p>&copy; 2025 Vanguard HyperCars. All rights reserved.</p>
         </div>
     </footer>
 
-    <div id="toast-notification" class="toast hidden">
-        <div class="toast-content">
-            <i class="fas fa-check-circle toast-icon"></i>
-            <div class="toast-message">
-                <h4>Thành công!</h4>
-                <p>Thông tin của bạn đang được nhân viên xử lý.</p>
-            </div>
-        </div>
-        <button class="toast-close"><i class="fas fa-times"></i></button>
-    </div>
-
-    <script src="../js/auth-helper.js"></script>
-    <script src="../js/auth.js"></script>
-    <script src="../js/database.js"></script>
-    <script src="../js/home.js"></script>
+    <script src="auth-helper.js"></script>
+    <script src="auth.js"></script>
+    <script src="home.js"></script>
 </body>
+
 </html>
