@@ -24,7 +24,7 @@ class AuthManager {
 
         try {
             // Fetch data from auth.json
-            const response = await fetch('../data/auth.json');
+            const response = await fetch('auth.json');
             if (!response.ok) {
                 throw new Error('Failed to load auth.json');
             }
