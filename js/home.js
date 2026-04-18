@@ -30,10 +30,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. HIỆU ỨNG FADE-IN KHI CUỘN TRANG
+    // 3. HIỆU ỨNG CUSTOM CURSOR (CON TRỎ CHUỘT)
+    const cursor = document.getElementById('customCursor');
+    
+    // Ẩn cursor mặc định trên thiết bị không phải cảm ứng
+    if (matchMedia('(pointer:fine)').matches) {
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Tạo hiệu ứng to ra (event delegation hỗ trợ phần tử động)
+        document.addEventListener('mouseover', (e) => {
+            if (e.target.closest('a, button, .hamburger, input, textarea, select, .car-card, .filter-btn, .remember-me, .terms-check, .user-profile-btn')) {
+                cursor.classList.add('hovering');
+            }
+        });
+        document.addEventListener('mouseout', (e) => {
+            if (e.target.closest('a, button, .hamburger, input, textarea, select, .car-card, .filter-btn, .remember-me, .terms-check, .user-profile-btn')) {
+                cursor.classList.remove('hovering');
+            }
+        });
+    } else {
+        // Nếu là điện thoại/máy tính bảng, ẩn cursor custom đi
+        cursor.style.display = 'none';
+    }
+
+    // 4. HIỆU ỨNG FADE-IN KHI CUỘN TRANG (INTERSECTION OBSERVER)
     const faders = document.querySelectorAll('.fade-in');
+    
     const appearOptions = {
-        threshold: 0.15,
+        threshold: 0.15, // Kích hoạt khi phần tử xuất hiện 15% trên màn hình
         rootMargin: "0px 0px -50px 0px"
     };
 
@@ -43,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             } else {
                 entry.target.classList.add('appear');
-                observer.unobserve(entry.target); 
+                observer.unobserve(entry.target); // Ngừng theo dõi sau khi đã hiện ra
             }
         });
     }, appearOptions);
@@ -52,29 +79,34 @@ document.addEventListener('DOMContentLoaded', () => {
         appearOnScroll.observe(fader);
     });
 
-    // 4. XỬ LÝ FORM ĐĂNG KÝ NHẬN TIN (TOAST NOTIFICATION)
-    const newsletterForm = document.querySelector('.newsletter-form');
-    const toast = document.getElementById('toast-notification');
-    const toastClose = document.querySelector('.toast-close');
+    // 5. TIN TỨC: LỌC DANH MỤC BAN ĐẦU
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const newsCards = document.querySelectorAll('.news-list-card');
 
-    if (newsletterForm && toast) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault(); 
-            
-            const emailInput = this.querySelector('input[type="email"]');
-            if(emailInput) emailInput.value = '';
-
-            toast.classList.add('show');
-
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3500);
-        });
-
-        if (toastClose) {
-            toastClose.addEventListener('click', () => {
-                toast.classList.remove('show');
+    if (filterBtns.length > 0 && newsCards.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filterValue = btn.getAttribute('data-filter');
+                
+                newsCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
             });
+        });
+        
+        // Kích hoạt filter mặc định nếu trang đang có class active khởi tạo
+        const activeFilter = document.querySelector('.filter-btn.active');
+        if(activeFilter) {
+            activeFilter.click();
         }
     }
 
