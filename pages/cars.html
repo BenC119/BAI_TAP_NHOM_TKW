@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanguard HyperCars | Bộ sưu tập</title>
+    <title>Vanguard HyperCars | Bộ Sưu Tập Xe</title>
+    <meta name="description" content="Khám phá bộ sưu tập siêu xe đỉnh cao của Vanguard HyperCars — Ferrari, Lamborghini, McLaren, Porsche và Bugatti.">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="home.css">
@@ -12,6 +13,7 @@
 <body>
     <div class="custom-cursor" id="customCursor"></div>
 
+    <!-- ===== HEADER (giống mọi trang) ===== -->
     <header id="header">
         <div class="container flex-nav">
             <div class="logo">
@@ -36,7 +38,6 @@
                     <li><a href="cars.html" class="active">BỘ SƯU TẬP XE</a></li>
                     <li><a href="contact.html">LIÊN HỆ</a></li>
                     <li><a href="news.html">TIN TỨC</a></li>
-                    <li><a href="cart.html" id="cart-link">GIỎ HÀNG</a></li>
                     <li class="auth-link"><a href="login.html">ĐĂNG NHẬP</a></li>
                     <li class="auth-link"><a href="register.html">ĐĂNG KÝ</a></li>
                 </ul>
@@ -44,36 +45,65 @@
         </div>
     </header>
 
+    <!-- ===== HERO SECTION (giống news/contact) ===== -->
     <section class="cars-hero contact-hero section-padding">
         <div class="container">
-            <div class="contact-hero-content fade-in" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="contact-hero-content fade-in" style="display:flex;flex-direction:column;align-items:center;">
                 <div class="yellow-dot"></div>
-                <h1 class="contact-title" style="border: none; color: #fff;">BỘ SƯU TẬP XE</h1>
+                <h1 class="contact-title" style="border:none;color:#fff;">BỘ SƯU TẬP XE</h1>
                 <p>Khám phá các cỗ máy tốc độ tối thượng của Vanguard HyperCars</p>
             </div>
         </div>
     </section>
 
-    <section class="cars-list-section section-padding">
+    <!-- ===== BỘ LỌC / FILTER BAR ===== -->
+    <section class="cars-filter-section">
         <div class="container">
-            <div class="cars-filters fade-in" id="cars-filters">
-                <button class="filter-btn active" data-filter="all">Tất cả</button>
-                <button class="filter-btn" data-filter="Hypercar">Hypercar</button>
-                <button class="filter-btn" data-filter="Sports Car">Sports Car</button>
-            </div>
-            
-            <div class="cars-grid fade-in" id="cars-grid">
-                <!-- Javascript will inject cars here -->
+            <div class="cars-filter-bar fade-in">
+                <button class="cars-filter-btn active" data-brand="all">Tất cả</button>
+                <button class="cars-filter-btn" data-brand="Ferrari">Ferrari</button>
+                <button class="cars-filter-btn" data-brand="Lamborghini">Lamborghini</button>
+                <button class="cars-filter-btn" data-brand="McLaren">McLaren</button>
+                <button class="cars-filter-btn" data-brand="Porsche">Porsche</button>
+                <button class="cars-filter-btn" data-brand="Bugatti">Bugatti</button>
             </div>
         </div>
     </section>
 
-    <!-- Footer from home.html -->
+    <!-- ===== MAIN COLLECTION LAYOUT (Split panel) ===== -->
+    <section class="collection-section section-padding">
+        <div class="container collection-layout">
+
+            <!-- LEFT SIDEBAR -->
+            <aside class="collection-sidebar" id="collectionSidebar">
+                <!-- rendered by JS -->
+            </aside>
+
+            <!-- RIGHT PANEL -->
+            <main class="collection-main" id="collectionMain">
+                <!-- rendered by JS -->
+            </main>
+
+        </div>
+    </section>
+
+    <!-- ===== MODAL CHI TIẾT ===== -->
+    <div class="car-detail-modal" id="carDetailModal">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-content" id="modalContent">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <div class="modal-body" id="modalBody">
+                <!-- filled by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER (giống mọi trang) ===== -->
     <footer class="site-footer">
         <div class="container footer-grid">
-            <div class="footer-col" style="display: flex; align-items: center;">
+            <div class="footer-col" style="display:flex;align-items:center;">
                 <div class="logo">
-                     <svg width="20" height="24" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right:8px;">
+                    <svg width="20" height="24" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right:8px;">
                         <path d="M12 0L24 6.9282V20.7846L12 27.7128L0 20.7846V6.9282L12 0Z" fill="var(--accent-gold)"/>
                         <path d="M12 4.6188L3.99996 9.2376V18.4752L12 23.094L20 18.4752V9.2376L12 4.6188Z" fill="#050814"/>
                         <path d="M12 9.2376L7.99996 11.547V16.1658L12 18.4752L16 16.1658V11.547L12 9.2376Z" fill="var(--accent-gold)"/>
@@ -82,9 +112,9 @@
                 </div>
             </div>
 
-            <div class="footer-col" style="text-align: center;">
+            <div class="footer-col" style="text-align:center;">
                 <h4>Liên kết nhanh</h4>
-                <ul style="display: inline-block; text-align: center; padding: 0;">
+                <ul style="display:inline-block;text-align:center;padding:0;">
                     <li><a href="about.html">Giới thiệu</a></li>
                     <li><a href="cars.html">Bộ sưu tập xe</a></li>
                     <li><a href="news.html">Tin tức</a></li>
@@ -92,18 +122,18 @@
                 </ul>
             </div>
 
-            <div class="footer-col" style="text-align: center;">
+            <div class="footer-col" style="text-align:center;">
                 <h4>Liên hệ</h4>
-                <ul style="display: inline-block; text-align: left; padding: 0;">
+                <ul style="display:inline-block;text-align:left;padding:0;">
                     <li>Email: contact@vanguardhypercars.com</li>
                     <li>Điện thoại: (123) 456-7890</li>
                     <li>Địa chỉ: 120 Yên Lãng, Phường Thịnh Quang, Đống Đa, Hà Nội</li>
                 </ul>
             </div>
 
-            <div class="footer-col social-col" style="text-align: center;">
+            <div class="footer-col social-col" style="text-align:center;">
                 <h4>Theo dõi chúng tôi</h4>
-                <div class="social-links" style="justify-content: center;">
+                <div class="social-links" style="justify-content:center;">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
