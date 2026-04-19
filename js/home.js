@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 2. HAMBURGER MENU CHO MOBILE
+    
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
     
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. HIỆU ỨNG FADE-IN KHI CUỘN TRANG
+    
     const faders = document.querySelectorAll('.fade-in');
     const appearOptions = {
         threshold: 0.15,

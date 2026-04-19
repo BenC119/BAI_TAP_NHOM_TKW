@@ -76,8 +76,13 @@ function showToast(message, type = 'success') {
     const toast = document.getElementById('toast-notification');
     if (!toast) return;
     
+    const toastTitle = toast.querySelector('.toast-message h4');
     const toastText = document.getElementById('toast-text');
     const toastIcon = toast.querySelector('.toast-icon');
+
+    if (toastTitle) {
+        toastTitle.textContent = type === 'error' ? 'Thất bại!' : 'Thành công!';
+    }
 
     if (toastText) {
         toastText.textContent = message;

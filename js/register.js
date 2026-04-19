@@ -8,13 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const regPassword = document.getElementById('reg-password');
 
     if (registerForm) {
-        // Password strength meter
-        if (regPassword) {
-            regPassword.addEventListener('input', function() {
-                updatePasswordStrength(this.value);
-            });
-        }
-
         registerForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
@@ -78,8 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             showToast(result.message, 'success');
 
-            // Redirect after 1.5 seconds
-            setTimeout(() => {
+            // Update header display to show user profile instead of login/register links
+           setTimeout(() => {
                 window.location.href = 'home.html';
             }, 1500);
         });
