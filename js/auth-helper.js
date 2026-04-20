@@ -68,6 +68,7 @@ function showToast(message, type = 'success') {
     
     const toastText = document.getElementById('toast-text');
     const toastIcon = toast.querySelector('.toast-icon');
+    const toastTitle = toast.querySelector('.toast-message h4');
 
     if (toastText) {
         toastText.textContent = message;
@@ -77,12 +78,18 @@ function showToast(message, type = 'success') {
     toast.classList.add('show');
 
     if (type === 'error') {
+        if (toastTitle) {
+            toastTitle.textContent = 'Thất bại!';
+        }
         if (toastIcon) {
             toastIcon.style.color = '#ff4757';
             toastIcon.classList.remove('fa-check-circle');
             toastIcon.classList.add('fa-exclamation-circle');
         }
     } else {
+        if (toastTitle) {
+            toastTitle.textContent = 'Thành công!';
+        }
         if (toastIcon) {
             toastIcon.style.color = '#00e5ff';
             toastIcon.classList.add('fa-check-circle');
