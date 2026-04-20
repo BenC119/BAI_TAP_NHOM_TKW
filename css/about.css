@@ -1,0 +1,1183 @@
+:root {
+    --bg-dark: #0a1128;
+    --bg-darker: #050814;
+    --card-bg: #121f3f;
+    --text-light: #f0f4f8;
+    --text-muted: #8a9bb8;
+    --accent-gold: #00e5ff;
+    --accent-soft: #00bcd4;
+    --line-soft: rgba(255, 255, 255, 0.08);
+    --glass-soft: rgba(255, 255, 255, 0.03);
+}
+
+/* ── Override cursor từ home.css để hoạt động trên about.html ── */
+* { cursor: none; }
+a, button, .hamburger, input, select, textarea, .brand-photo-frame,
+.news-card, .about-milestone, .about-core, .brand-step { cursor: none; }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    background-image:
+        radial-gradient(circle at 12% 8%, rgba(0, 229, 255, 0.08), transparent 30%),
+        radial-gradient(circle at 86% 14%, rgba(0, 229, 255, 0.05), transparent 28%);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+/* ── Auth nav links (ẩn hoặc hiện theo js auth-helper) ── */
+.auth-link { /* hiển thị bình thường, auth-helper.js sẽ quản lý */ }
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+.bg-darker {
+    background: linear-gradient(180deg, #0a1128 0%, var(--bg-darker) 100%);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.45rem;
+    margin-bottom: 56px;
+    color: var(--accent-gold);
+    letter-spacing: 1.4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 0 0 18px rgba(0, 229, 255, 0.12);
+    position: relative;
+}
+
+/* Gạch chân accent cho section title */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 56px;
+    height: 3px;
+    margin: 14px auto 0;
+    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 20px 0;
+    background: rgba(10, 17, 40, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+header.scrolled {
+    padding: 10px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+}
+
+.flex-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding: 0 4%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--accent-gold);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.nav-links li {
+    white-space: nowrap;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent-gold);
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: var(--text-light);
+    transition: 0.3s;
+}
+
+/* —— Hành trình thương hiệu —— */
+.about-brand {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-brand::before {
+    content: "";
+    position: absolute;
+    inset: -20% -10% auto;
+    height: 55%;
+    background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(0, 229, 255, 0.12), transparent 72%);
+    pointer-events: none;
+}
+
+.brand-intro {
+    text-align: center;
+    max-width: 720px;   
+    margin: 0 auto 64px;
+    position: relative;
+    z-index: 1;
+}
+
+.brand-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.brand-eyebrow-line {
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-gold));
+}
+
+.brand-heading {
+    font-size: clamp(2rem, 4.2vw, 3.15rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--text-light);
+    margin-bottom: 18px;
+    text-transform: none;
+}
+
+.brand-heading em {
+    font-style: normal;
+    background: linear-gradient(120deg, #fff 0%, var(--accent-gold) 45%, var(--accent-soft) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+    filter: drop-shadow(0 0 28px rgba(0, 229, 255, 0.25));
+}
+
+.brand-lead {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+.brand-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.15fr);
+    gap: clamp(36px, 5vw, 72px);
+    align-items: start;
+    position: relative;
+    z-index: 1;
+}
+
+.brand-sidephoto {
+    position: relative;
+    top: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.brand-photo-frame {
+    position: relative;
+    border-radius: 14px;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.55), rgba(0, 188, 212, 0.15) 40%, rgba(255, 255, 255, 0.08) 100%);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+}
+
+.brand-photo-frame:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow:
+        0 0 0 1px rgba(0, 229, 255, 0.35),
+        0 36px 72px rgba(0, 0, 0, 0.5),
+        0 0 100px rgba(0, 229, 255, 0.18);
+}
+
+.brand-photo-frame img {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.brand-photo-shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        115deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.08) 50%,
+        transparent 70%
+    );
+    transform: translateX(-100%) skewX(-12deg);
+    transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    border-radius: 12px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.brand-photo-frame:hover .brand-photo-shine {
+    transform: translateX(200%) skewX(-12deg);
+}
+
+.brand-stats {
+    list-style: none;
+    margin-top: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 22px;
+}
+
+.brand-stats li {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--line-soft);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.brand-stat-highlight {
+    display: inline-block;
+    margin-right: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--accent-gold);
+}
+
+.brand-break-photo {
+    margin: 8px 0 28px 72px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--line-soft);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+}
+
+.brand-break-photo img {
+    display: block;
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+}
+
+
+.brand-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    padding-left: 8px;
+}
+
+.brand-steps::before {
+    content: "";
+    position: absolute;
+    left: 22px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 229, 255, 0.55) 0%,
+        rgba(0, 188, 212, 0.2) 50%,
+        rgba(255, 255, 255, 0.06) 100%
+    );
+    border-radius: 2px;
+}
+
+.brand-step {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 18px 20px;
+    padding: 26px 0 26px 0;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.35s ease;
+}
+
+.brand-step:last-child {
+    border-bottom: none;
+}
+
+.brand-step:hover {
+    background: linear-gradient(90deg, rgba(0, 229, 255, 0.04), transparent 65%);
+}
+
+.brand-step-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: rgba(0, 229, 255, 0.45);
+    line-height: 1.4;
+    padding-top: 4px;
+    text-align: right;
+}
+
+.brand-step:hover .brand-step-num {
+    color: var(--accent-gold);
+    text-shadow: 0 0 16px rgba(0, 229, 255, 0.45);
+}
+
+.brand-step-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.brand-step-content p {
+    color: var(--text-muted);
+    line-height: 1.9;
+    font-size: 1.02rem;
+    text-align: justify;
+    margin: 0;
+}
+
+/* —— Cột mốc —— */
+.about-milestones {
+    position: relative;
+}
+
+.about-milestones::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: min(100%, 1180px);
+    height: 100%;
+    background: radial-gradient(ellipse 80% 45% at 50% 20%, rgba(0, 229, 255, 0.06), transparent 55%);
+    pointer-events: none;
+}
+
+.about-milestones-grid {
+   display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.about-milestones-grid::after {
+    display: none;
+}
+
+.about-milestone-cover {
+    position: relative;
+    z-index: 1;
+    height: 270px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.about-milestone-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-milestone:hover .about-milestone-cover img {
+    transform: scale(1.06);
+}
+
+
+.about-milestone {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 14px;
+    transform-style: preserve-3d;
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.35s ease,
+        box-shadow 0.45s ease;
+    --mx: 50%;
+    --my: 40%;
+}
+
+.about-milestone::before {
+    height: 3px;
+    opacity: 1;
+    background: linear-gradient(90deg, transparent 0%, var(--accent-soft) 35%, var(--accent-gold) 50%, var(--accent-soft) 65%, transparent 100%);
+}
+
+
+
+.about-milestone-shine { display: none; }
+
+.about-milestone-text {
+    position: relative;
+    z-index: 3;
+    padding-top: 22px;
+}
+
+
+.about-milestone-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin: 16px 0 6px;
+    border-radius: 12px;
+    color: var(--accent-gold);
+    background: rgba(0, 229, 255, 0.08);
+    border: 1px solid rgba(0, 229, 255, 0.22);
+    font-size: 1.15rem;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.35s ease;
+}
+
+
+
+.about-milestone:hover .about-milestone-shine {
+    transform: translateX(120%) skewX(-12deg);
+}
+
+.about-milestone:hover .about-milestone-icon {
+    transform: scale(1.08) translateY(-2px);
+    background: rgba(0, 229, 255, 0.18);
+    box-shadow: 0 0 24px rgba(0, 229, 255, 0.35);
+}
+
+
+
+.about-milestone .news-title,
+.about-milestone .news-desc {
+    position: relative;
+    z-index: 2;
+}
+
+.news-card.about-core {
+   transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+.about-core-cover {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.about-core-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.6s ease;
+    filter: brightness(0.7) contrast(1.1); 
+}
+
+
+.about-core-cover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--card-bg) 0%, rgba(0, 229, 255, 0.1) 100%);
+    opacity: 0.6;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+.about-core .news-title {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+
+
+.news-card.about-core:hover {
+   transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 229, 255, 0.1);
+}
+
+
+.news-card.about-core:hover .about-core-cover img {
+    transform: scale(1.08);
+    filter: brightness(1) contrast(1.1);
+}
+
+
+.news-card.about-core:hover .about-core-cover::after {
+    opacity: 0.2;
+}
+
+.news-card.about-core:hover .news-title {
+    color: var(--accent-gold); 
+    text-shadow: 0 0 12px rgba(0, 229, 255, 0.4);
+}
+
+.about-footer-photo {
+    margin-top: 22px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--line-soft);
+    max-width: 280px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.about-footer-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.news-card {
+    background: linear-gradient(180deg, rgba(18, 31, 63, 0.96) 0%, rgba(10, 17, 40, 0.92) 100%);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid var(--line-soft);
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card.about-milestone {
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.35s ease,
+        box-shadow 0.45s ease;
+}
+
+.news-card::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--accent-gold) 50%, transparent 100%);
+    opacity: 0.65;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 229, 255, 0.5);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.42);
+}
+
+.news-card.about-milestone:hover {
+    transform: translateY(-10px); 
+    border-color: var(--accent-gold);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.news-content {
+    padding: 26px;
+    position: relative;
+}
+
+.news-date {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--accent-gold);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.news-date::after {
+    content: "";
+    display: block;
+    width: 34px;
+    height: 2px;
+    margin-top: 8px;
+    background: var(--accent-gold);
+}
+
+.news-date.about-milestone-date {
+    position: relative;
+    z-index: 2;
+    font-size: 1.65rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    background: linear-gradient(135deg, #fff 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.news-date.about-milestone-date::after {
+    width: 48px;
+    height: 3px;
+    margin-top: 10px;
+    background: linear-gradient(90deg, var(--accent-gold), transparent);
+    border-radius: 2px;
+}
+
+/* ── news-title: sync color với design system ── */
+.news-title {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.news-card:hover .news-title,
+.about-milestone:hover .news-title {
+    color: var(--accent-gold);
+    text-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
+}
+
+.about-milestone-title {
+    margin-bottom: 12px;
+    font-size: 1.22rem;
+    line-height: 1.5;
+}
+
+.news-desc {
+    color: var(--text-muted);
+    line-height: 1.72;
+}
+
+.site-footer {
+    background-color: var(--bg-darker);
+    padding: 70px 0 20px;
+    border-top: 1px solid var(--line-soft);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
+    gap: 60px;
+    margin-bottom: 50px;
+    max-width: 100%;
+    padding: 0 5%;
+}
+
+.footer-col h4 {
+    color: var(--accent-gold);
+    margin: 0 0 25px 0;
+    font-weight: 600;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 15px;
+}
+
+.footer-col ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--accent-gold);
+    transform: translateX(5px);
+    display: inline-block;
+}
+
+.footer-col.social-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.follow h4 {
+    margin-right: 25px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--card-bg);
+    color: var(--text-light);
+    border-radius: 50%;
+    border: 1px solid var(--line-soft);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background-color: var(--accent-gold);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 229, 255, 0.4);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 25px;
+    border-top: 1px solid var(--line-soft);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 1200px) {
+    .nav-links {
+        gap: 15px;
+    }
+    .nav-links a {
+        font-size: 11px;
+    }
+    .footer-grid {
+     
+        grid-template-columns: 1.5fr 1.2fr 1.5fr 1.2fr; 
+        gap: 30px; 
+    }
+    
+    .footer-col h4 {
+        font-size: 0.95rem;
+    }
+
+    .footer-col p {
+        font-size: 0.85rem; 
+    }
+
+    .footer-col ul li a {
+        font-size: 0.85rem; 
+        white-space: nowrap; 
+    }
+}
+
+@media (max-width: 992px) {
+    .logo {
+        font-size: 14px;
+        letter-spacing: 1.1px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .brand-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-sidephoto {
+        position: relative;
+        top: auto;
+    }
+
+    .brand-break-photo {
+        margin-left: 0;
+    }
+
+   
+  
+    .about-milestones-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr; 
+        gap: 50px 30px; 
+    }
+
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+   .footer-col.social-col.follow h4 {
+        margin-left: 30px;
+    }
+
+   
+    .footer-col.social-col {
+        align-items: flex-start; 
+    }
+
+    .social-links {
+        justify-content: flex-start;
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    header .container {
+        width: 95%; 
+    }
+
+  
+    .flex-nav {
+       display: flex;
+        justify-content: space-between;
+    }
+    header nav {
+        position: absolute; 
+    }
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: min(78vw, 320px);
+        height: 100vh;
+        background: rgba(10, 17, 40, 0.98);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 88px 28px 28px;
+        gap: 0;
+        transition: right 0.35s ease;
+     
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.45);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: var(--accent-gold);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: var(--accent-gold);
+    }
+
+    .nav-links li {
+        margin: 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(138, 155, 184, 0.18);
+        padding: 14px 0;   
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        width: 100%;
+        
+    }
+
+    .section-title {
+        font-size: 1.85rem;
+    }
+
+    .brand-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+  
+    .brand-sidephoto {
+        position: relative;
+        top: 0;
+        width: 100%;
+        max-width: 500px; 
+        margin: 0 auto; 
+    }
+
+    .brand-photo-frame img {
+        aspect-ratio: 16/9; 
+    }
+
+
+    .brand-stats {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+
+    .brand-steps {
+        padding-left: 0;
+    }
+
+
+    .brand-steps::before {
+        left: 8px; 
+    }
+
+    .brand-step {
+        grid-template-columns: 32px 1fr; 
+        gap: 12px;
+        padding: 20px 0;
+    }
+
+
+    .brand-step-num {
+        text-align: left;
+        font-size: 0.85rem;
+    }
+
+
+    .brand-heading {
+        font-size: 2.2rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-milestones-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr; 
+        gap: 45px; 
+        padding: 0;
+    }
+
+   
+    .footer-col {
+        align-items: center;
+        text-align: center;  
+    }
+
+    .footer-col .logo {
+        justify-content: center;
+        margin-bottom: 12px;
+    }
+
+    .footer-col h4 {
+        margin: 0 0 16px 0;
+    }
+
+
+    .footer-col ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    
+    .footer-col.social-col {
+        align-items: center !important;
+    }
+    .social-links {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .about-footer-photo {
+        margin: 0 auto;
+        max-width: min(100%, 320px);
+    }
+
+    .footer-col ul li a:hover {
+        transform: none; 
+    }
+}
+
+
+
+@media (min-width: 1400px) {
+  
+    .container {
+        max-width: 1440px; 
+        width: 85%;     
+    }
+
+
+    .brand-heading {
+        font-size: clamp(3.15rem, 5vw, 4.5rem);
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        font-size: clamp(2.45rem, 4vw, 3.5rem);
+        margin-bottom: 80px;
+    }
+
+
+    .section-padding {
+        padding: 140px 0;
+    }
+
+    .brand-layout {
+        grid-template-columns: minmax(500px, 650px) 1fr;
+        gap: 100px;
+    }
+
+    .brand-sidephoto {
+        top: 150px;
+    }
+
+    .grid-container, 
+    .about-milestones-grid {
+        gap: 40px;
+    }
+    .news-content {
+        padding: 40px;
+    }
+
+    .brand-heading {
+        font-size: 5.0rem;
+    }
+
+    .brand-lead {
+        font-size: 1.4rem;
+        max-width: 700px; 
+    }
+
+
+    .brand-stat-highlight {
+        font-size: 1.6rem;
+    }
+
+    .brand-stats li {
+        font-size: 1.1rem;
+        padding: 15px 25px;
+    }
+
+
+    .brand-heading em {
+        filter: drop-shadow(0 0 45px rgba(0, 229, 255, 0.4));
+    }
+    
+    .news-card.about-core:hover {
+        transform: translateY(-20px); 
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 
+                    0 0 40px rgba(0, 229, 255, 0.2);
+    }
+}
+
+
+
+
+
+@media (min-width: 1920px) {
+ 
+    .container {
+        max-width: 1700px; 
+    }
+
+ 
+    .brand-heading {
+        font-size: 5.5rem;
+    }
+
+    .brand-lead {
+        font-size: 1.4rem;
+        max-width: 700px; 
+    }
+
+    .brand-stat-highlight {
+        font-size: 1.6rem;
+    }
+
+    .brand-stats li {
+        font-size: 1.1rem;
+        padding: 15px 25px;
+    }
+
+    .brand-heading em {
+        filter: drop-shadow(0 0 45px rgba(0, 229, 255, 0.4));
+    }
+    
+    .news-card.about-core:hover {
+        transform: translateY(-20px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 
+                    0 0 40px rgba(0, 229, 255, 0.2);
+    }
+}
