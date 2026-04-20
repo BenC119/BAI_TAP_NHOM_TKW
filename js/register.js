@@ -1,14 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const registerForm = document.getElementById('registerForm');
-    const regPassword = document.getElementById('reg-password');
 
     if (registerForm) {
-        if (regPassword) {
-            regPassword.addEventListener('input', function() {
-                updatePasswordStrength(this.value);
-            });
-        }
-
         registerForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
@@ -37,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 isValid = false;
             }
 
-            if (!phone || phone.length < 10) {
-                showError('reg-phone', 'Vui lòng nhập số điện thoại hợp lệ');
+            if (!/^\d{10}$/.test(phone)) {
+                showError('reg-phone', 'Số điện thoại phải gồm đúng 10 chữ số');
                 isValid = false;
             }
 
