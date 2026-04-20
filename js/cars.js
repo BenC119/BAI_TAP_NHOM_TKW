@@ -2,7 +2,7 @@
  * cars.js — Bộ sưu tập xe
  * Layout: Left sidebar (Brand → Model) + Right hero panel
  * Tính năng: Filter theo hãng, fade transition, modal chi tiết,
- *             scroll wheel / keyboard navigation
+ *             keyboard / touch navigation
  */
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -252,15 +252,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         else if (e.key === 'Escape') closeCarModal();
     });
 
-    // Mouse wheel on right panel
-    let wheelCooldown = false;
-    mainArea.addEventListener('wheel', e => {
-        e.preventDefault();
-        if (wheelCooldown) return;
-        wheelCooldown = true;
-        setTimeout(() => { wheelCooldown = false; }, 650);
-        if (e.deltaY > 0) navigateNext(); else navigatePrev();
-    }, { passive: false });
+
 
     // Touch swipe
     let touchStartY = 0;
