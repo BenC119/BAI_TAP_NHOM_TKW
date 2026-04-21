@@ -437,6 +437,7 @@ header.scrolled {
     align-items: flex-end; 
 }
 
+
 .social-links { 
     display: flex; 
     gap: 15px; 
@@ -825,6 +826,7 @@ header.scrolled {
         height: 60px;
         font-size: 1.4rem;
     }
+
     .footer-bottom {
         font-size: 1.1rem;
         margin-top: 80px;
