@@ -155,9 +155,11 @@ class AuthManager {
 
         // Simple password verification for demo
         // In production, implement proper bcryptjs verification
-        const passwordMatch = await this.verifyPassword(password, user.password) || 
+        const passwordMatch = await this.verifyPassword(password, user.password) ||
                              password === 'Demo123!' ||
-                             user.password === password;
+                             user.password === password ||
+                             // Support login after password reset via forgot-password flow
+                             (user._plainPassword && user._plainPassword === password);
 
         if (!passwordMatch) {
             return {
