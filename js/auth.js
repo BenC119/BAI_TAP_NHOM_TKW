@@ -100,7 +100,7 @@ class AuthManager {
         if (users.find(u => u.email === email)) {
             return {
                 success: false,
-                message: 'Email này đã được đăng ký'
+                message: 'Email đã được đăng ký!'
             };
         }
 
@@ -239,14 +239,14 @@ class AuthManager {
                 userProfileItem.className = 'user-profile-item';
                 userProfileItem.innerHTML = `
                     <div class="user-profile-dropdown">
-                        <button class="user-profile-btn">
-                            <i class="fas fa-user-circle"></i>
-                            <span class="user-name">${user.firstName} ${user.lastName}</span>
-                            <i class="fas fa-chevron-down"></i>
+                        <button class="user-profile-btn" style="background: none; border: none; color: var(--text-light); cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; text-transform: uppercase;">
+                            <i class="fas fa-user-circle" style="font-size: 1.2rem; color: var(--accent-gold);"></i>
+                            <span class="user-name">TÀI KHOẢN</span>
+                            <i class="fas fa-chevron-down" style="font-size: 0.8rem;"></i>
                         </button>
                         <div class="dropdown-menu">
                             <a href="#" class="dropdown-item profile-link">
-                                <i class="fas fa-user"></i> Tài khoản
+                                <i class="fas fa-user"></i> Hồ sơ
                             </a>
                             <a href="#" class="dropdown-item logout-link">
                                 <i class="fas fa-sign-out-alt"></i> Đăng xuất

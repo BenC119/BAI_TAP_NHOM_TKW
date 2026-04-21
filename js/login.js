@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             showToast(result.message, 'success');
 
-            // Redirect after 1.5 seconds
+            // Update header display to show user profile instead of login/register links
             setTimeout(() => {
                 window.location.href = 'home.html';
             }, 1500);
