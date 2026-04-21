@@ -410,6 +410,13 @@ header.scrolled {
     margin: 0 auto;
 }
 
+#newsletter {
+    max-width: 700px;
+    margin: 0 auto 80px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
 .newsletter-desc {
     margin-bottom: 30px;
     color: var(--text-muted);
