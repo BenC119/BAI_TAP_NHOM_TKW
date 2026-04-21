@@ -1,9 +1,3 @@
-/**
- * Authentication Manager - Pure JavaScript with localStorage
- * Loads user data from data/auth.json on page load
- * Passwords are hashed using client-side hashing
- */
-
 class AuthManager {
     constructor() {
         this.usersKey = 'vanguard_users';
@@ -11,62 +5,36 @@ class AuthManager {
         this.initializeUsers();
     }
 
-    /**
-     * Load users from auth.json file and initialize localStorage
-     */
     async initializeUsers() {
         const users = localStorage.getItem(this.usersKey);
-        
-        // If already initialized, skip
+
         if (users) {
             return;
         }
 
         try {
-            // Fetch data from auth.json
             const response = await fetch('../data/auth.json');
             if (!response.ok) {
                 throw new Error('Failed to load auth.json');
             }
-            
+
             const data = await response.json();
-            
-            // Store users in localStorage
+
             if (data.users && Array.isArray(data.users)) {
                 localStorage.setItem(this.usersKey, JSON.stringify(data.users));
             }
         } catch (error) {
             console.error('Error loading auth.json:', error);
-            // Fallback: create default user if load fails
-            const defaultUsers = [
-                {
-                    id: 1,
-                    firstName: 'Demo',
-                    lastName: 'User',
-                    email: 'demo@example.com',
-                    phone: '0901234567',
-                    password: '$2a$10$WvJBe6oLdPHjNqRKsGQ9He3JI0uN0OUbqHfZ6GhEcyI4o2DWpbQe.',
-                    createdAt: new Date().toISOString()
-                }
-            ];
-            localStorage.setItem(this.usersKey, JSON.stringify(defaultUsers));
+            localStorage.setItem(this.usersKey, JSON.stringify([]));
         }
     }
 
-    /**
-     * Get all users
-     */
     getAllUsers() {
         const users = localStorage.getItem(this.usersKey);
         return users ? JSON.parse(users) : [];
     }
 
-    /**
-     * Hash password (simple hashing - in production use bcryptjs properly)
-     * For client-side hashing, using a simplified SHA256-like approach
-     */
     async hashPassword(password) {
-        // Create a simple hash using built-in crypto API
         const encoder = new TextEncoder();
         const data = encoder.encode(password + 'vanguard_salt_key');
         const hashBuffer = await crypto.subtle.digest('SHA-256', data);
@@ -74,37 +42,25 @@ class AuthManager {
         return '$2a$' + hashArray.map(b => b.toString(16).padStart(2, '0')).join('').substring(0, 60);
     }
 
-    /**
-     * Verify password - Simple implementation for demo
-     * In production, use bcryptjs library for proper hashing
-     */
     async verifyPassword(plainPassword, hashedPassword) {
-        // For demo purposes, check if password matches the demo account password
-        // In production, implement proper bcryptjs verification
         if (plainPassword === 'Demo123!' && hashedPassword.includes('$2a$')) {
             return true;
         }
-        
-        // Also check direct match (for newly created accounts)
+
         const newHash = await this.hashPassword(plainPassword);
         return newHash === hashedPassword;
     }
 
-    /**
-     * Register new user
-     */
     async register(firstName, lastName, email, phone, password) {
         const users = this.getAllUsers();
 
-        // Check if email already exists
         if (users.find(u => u.email === email)) {
             return {
                 success: false,
-                message: 'Email đã được đăng ký!'
+                message: 'Email này đã được đăng ký'
             };
         }
 
-        // Check if phone already exists
         if (users.find(u => u.phone === phone)) {
             return {
                 success: false,
@@ -112,10 +68,8 @@ class AuthManager {
             };
         }
 
-        // Hash password
         const hashedPassword = await this.hashPassword(password);
 
-        // Create new user
         const newUser = {
             id: users.length > 0 ? Math.max(...users.map(u => u.id)) + 1 : 1,
             firstName,
@@ -129,7 +83,6 @@ class AuthManager {
         users.push(newUser);
         localStorage.setItem(this.usersKey, JSON.stringify(users));
 
-        // Auto login after register
         this.setCurrentUser(newUser);
 
         return {
@@ -139,9 +92,6 @@ class AuthManager {
         };
     }
 
-    /**
-     * Login user
-     */
     async login(email, password) {
         const users = this.getAllUsers();
         const user = users.find(u => u.email === email);
@@ -153,11 +103,9 @@ class AuthManager {
             };
         }
 
-        // Simple password verification for demo
-        // In production, implement proper bcryptjs verification
-        const passwordMatch = await this.verifyPassword(password, user.password) || 
-                             password === 'Demo123!' ||
-                             user.password === password;
+        const passwordMatch = await this.verifyPassword(password, user.password) ||
+            password === 'Demo123!' ||
+            user.password === password;
 
         if (!passwordMatch) {
             return {
@@ -175,79 +123,63 @@ class AuthManager {
         };
     }
 
-    /**
-     * Set current logged-in user
-     */
     setCurrentUser(user) {
         const userWithoutPassword = this.getUserWithoutPassword(user);
         localStorage.setItem(this.currentUserKey, JSON.stringify(userWithoutPassword));
     }
 
-    /**
-     * Get current logged-in user
-     */
     getCurrentUser() {
         const user = localStorage.getItem(this.currentUserKey);
         return user ? JSON.parse(user) : null;
     }
 
-    /**
-     * Check if user is logged in
-     */
     isLoggedIn() {
         return !!this.getCurrentUser();
     }
 
-    /**
-     * Logout
-     */
     logout() {
         localStorage.removeItem(this.currentUserKey);
         window.location.href = 'home.html';
     }
 
-    /**
-     * Get user without password
-     */
     getUserWithoutPassword(user) {
         const { password, ...userWithoutPassword } = user;
         return userWithoutPassword;
     }
 
-    /**
-     * Update current user display in header
-     */
     updateHeaderDisplay() {
         const user = this.getCurrentUser();
         const authLinks = document.querySelectorAll('.auth-link');
         const navLinks = document.getElementById('nav-links');
+        const formatFullName = (currentUser) => `${currentUser.lastName} ${currentUser.firstName}`.trim();
 
         if (!authLinks || authLinks.length < 2) return;
 
-        const loginLink = authLinks[0]; // Đăng nhập
-        const registerLink = authLinks[1]; // Đăng ký
+        const loginLink = authLinks[0];
+        const registerLink = authLinks[1];
+        const loginItem = loginLink.closest('li');
+        const registerItem = registerLink.closest('li');
 
         if (user) {
-            // User is logged in - hide auth links and show user info
-            loginLink.style.display = 'none';
-            registerLink.style.display = 'none';
+            if (loginItem) {
+                loginItem.style.display = 'none';
+            }
+            if (registerItem) {
+                registerItem.style.display = 'none';
+            }
 
-            // Create user profile link if doesn't exist
             let userProfileItem = navLinks.querySelector('.user-profile-item');
             if (!userProfileItem) {
                 userProfileItem = document.createElement('li');
                 userProfileItem.className = 'user-profile-item';
                 userProfileItem.innerHTML = `
                     <div class="user-profile-dropdown">
-                        <button class="user-profile-btn" style="background: none; border: none; color: var(--text-light); cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; text-transform: uppercase;">
-                            <i class="fas fa-user-circle" style="font-size: 1.2rem; color: var(--accent-gold);"></i>
-                            <span class="user-name">TÀI KHOẢN</span>
-                            <i class="fas fa-chevron-down" style="font-size: 0.8rem;"></i>
+                        <button class="user-profile-btn">
+                            <i class="fas fa-user-circle"></i>
+                            <span class="user-name">${formatFullName(user)}</span>
+                            <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item profile-link">
-                                <i class="fas fa-user"></i> Hồ sơ
-                            </a>
                             <a href="#" class="dropdown-item logout-link">
                                 <i class="fas fa-sign-out-alt"></i> Đăng xuất
                             </a>
@@ -256,23 +188,22 @@ class AuthManager {
                 `;
                 navLinks.appendChild(userProfileItem);
 
-                // Toggle dropdown
                 const profileBtn = userProfileItem.querySelector('.user-profile-btn');
                 const dropdownMenu = userProfileItem.querySelector('.dropdown-menu');
 
                 profileBtn.addEventListener('click', (e) => {
                     e.preventDefault();
                     dropdownMenu.classList.toggle('show');
+                    profileBtn.classList.toggle('active');
                 });
 
-                // Close dropdown when clicking outside
                 document.addEventListener('click', (e) => {
                     if (!userProfileItem.contains(e.target)) {
                         dropdownMenu.classList.remove('show');
+                        profileBtn.classList.remove('active');
                     }
                 });
 
-                // Logout handler
                 const logoutLink = userProfileItem.querySelector('.logout-link');
                 logoutLink.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -280,19 +211,27 @@ class AuthManager {
                         this.logout();
                     }
                 });
+
+                const profileLinks = userProfileItem.querySelectorAll('.profile-link');
+                profileLinks.forEach((profileLink) => {
+                    profileLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                    });
+                });
             } else {
-                // Update name if already exists
                 const userNameSpan = userProfileItem.querySelector('.user-name');
                 if (userNameSpan) {
-                    userNameSpan.textContent = `${user.firstName} ${user.lastName}`;
+                    userNameSpan.textContent = formatFullName(user);
                 }
             }
         } else {
-            // User is not logged in - show auth links
-            loginLink.style.display = 'block';
-            registerLink.style.display = 'block';
+            if (loginItem) {
+                loginItem.style.display = '';
+            }
+            if (registerItem) {
+                registerItem.style.display = '';
+            }
 
-            // Remove user profile item if exists
             const userProfileItem = navLinks.querySelector('.user-profile-item');
             if (userProfileItem) {
                 userProfileItem.remove();
@@ -301,10 +240,8 @@ class AuthManager {
     }
 }
 
-// Global instance
 const auth = new AuthManager();
 
-// Update header on page load
 document.addEventListener('DOMContentLoaded', () => {
     auth.updateHeaderDisplay();
 });
