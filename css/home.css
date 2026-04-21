@@ -656,17 +656,41 @@ header.scrolled {
     }
 
     .user-profile-btn {
-        font-size: 11px;
-        padding: 6px 10px;
+        font-size: 13px;
+        padding: 8px 12px;
     }
 
     .user-name {
-        display: none;
+        display: inline;
+    }
+
+    .user-profile-item {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .user-profile-dropdown {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .user-profile-dropdown .dropdown-menu {
-        right: -10px;
-        min-width: 180px;
+        position: static;
+        right: auto;
+        min-width: 220px;
+        width: 220px;
+        margin-top: 10px;
+        transform: none;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .user-profile-dropdown .dropdown-menu.show {
+        display: block;
     }
     
     .nav-links li { 
