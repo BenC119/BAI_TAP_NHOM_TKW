@@ -1,8 +1,3 @@
-/**
- * Login Form Handler - Pure JavaScript (No Backend)
- * Uses auth-helper.js for common functions
- */
-
 document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('loginForm');
 
@@ -13,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('login-email').value.trim();
             const password = document.getElementById('login-password').value;
 
-            // Validation
             if (!validateEmail(email)) {
                 showError('login-email', 'Email không hợp lệ');
                 return;
@@ -24,10 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Clear errors
             clearErrors();
 
-            // Perform login using auth manager
             const result = await auth.login(email, password);
 
             if (!result.success) {
@@ -37,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             showToast(result.message, 'success');
 
-            // Update header display to show user profile instead of login/register links
             setTimeout(() => {
                 window.location.href = 'home.html';
             }, 1500);

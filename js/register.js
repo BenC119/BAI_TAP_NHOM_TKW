@@ -1,11 +1,5 @@
-/**
- * Register Form Handler - Pure JavaScript (No Backend)
- * Uses auth-helper.js for common functions
- */
-
 document.addEventListener('DOMContentLoaded', function() {
     const registerForm = document.getElementById('registerForm');
-    const regPassword = document.getElementById('reg-password');
 
     if (registerForm) {
         registerForm.addEventListener('submit', async function(e) {
@@ -17,13 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const phone = document.getElementById('reg-phone').value.trim();
             const password = document.getElementById('reg-password').value;
             const confirmPassword = document.getElementById('reg-confirm').value;
-            const termsCheckbox = document.querySelector('input[name="terms"]');
 
-            // Clear previous errors
             clearErrors();
             let isValid = true;
 
-            // Validation
             if (!firstName) {
                 showError('reg-firstname', 'Vui lòng nhập tên');
                 isValid = false;
@@ -39,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 isValid = false;
             }
 
-            if (!phone || phone.length < 10) {
-                showError('reg-phone', 'Vui lòng nhập số điện thoại hợp lệ');
+            if (!/^\d{10}$/.test(phone)) {
+                showError('reg-phone', 'Số điện thoại phải gồm đúng 10 chữ số');
                 isValid = false;
             }
 
@@ -54,14 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 isValid = false;
             }
 
-            if (!termsCheckbox.checked) {
-                showToast('Vui lòng chấp nhận Điều khoản dịch vụ', 'error');
-                isValid = false;
-            }
-
             if (!isValid) return;
 
-            // Perform registration using auth manager
             const result = await auth.register(firstName, lastName, email, phone, password);
 
             if (!result.success) {
@@ -71,8 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             showToast(result.message, 'success');
 
-            // Update header display to show user profile instead of login/register links
-           setTimeout(() => {
+            setTimeout(() => {
                 window.location.href = 'home.html';
             }, 1500);
         });

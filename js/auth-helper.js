@@ -1,15 +1,9 @@
-/**
- * Auth Helper - Các hàm dùng chung cho login/register
- * Loại bỏ code lặp lại giữa login.js và register.js
- */
 
-// Email validation
 function validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
 
-// Show error message
 function showError(inputId, message) {
     const input = document.getElementById(inputId);
     if (!input) return;
@@ -26,7 +20,6 @@ function showError(inputId, message) {
     }
 }
 
-// Clear all errors
 function clearErrors() {
     document.querySelectorAll('.form-group').forEach(group => {
         group.classList.remove('error');
@@ -38,7 +31,6 @@ function clearErrors() {
     });
 }
 
-// Clear error on input
 document.addEventListener('input', function(e) {
     if (e.target.closest('.form-group')) {
         const formGroup = e.target.closest('.form-group');
@@ -52,7 +44,6 @@ document.addEventListener('input', function(e) {
     }
 });
 
-// Toggle password visibility
 function togglePassword(inputId) {
     const input = document.getElementById(inputId);
     if (!input) return;
@@ -71,7 +62,6 @@ function togglePassword(inputId) {
     }
 }
 
-// Show toast notification
 function showToast(message, type = 'success') {
     const toast = document.getElementById('toast-notification');
     if (!toast) return;
@@ -79,6 +69,7 @@ function showToast(message, type = 'success') {
     const toastTitle = toast.querySelector('.toast-message h4');
     const toastText = document.getElementById('toast-text');
     const toastIcon = toast.querySelector('.toast-icon');
+    const toastTitle = toast.querySelector('.toast-message h4');
 
     if (toastTitle) {
         toastTitle.textContent = type === 'error' ? 'Thất bại!' : 'Thành công!';
@@ -91,14 +82,19 @@ function showToast(message, type = 'success') {
     toast.classList.remove('hidden');
     toast.classList.add('show');
 
-    // Change icon color based on type
     if (type === 'error') {
+        if (toastTitle) {
+            toastTitle.textContent = 'Thất bại!';
+        }
         if (toastIcon) {
             toastIcon.style.color = '#ff4757';
             toastIcon.classList.remove('fa-check-circle');
             toastIcon.classList.add('fa-exclamation-circle');
         }
     } else {
+        if (toastTitle) {
+            toastTitle.textContent = 'Thành công!';
+        }
         if (toastIcon) {
             toastIcon.style.color = '#00e5ff';
             toastIcon.classList.add('fa-check-circle');
@@ -106,14 +102,12 @@ function showToast(message, type = 'success') {
         }
     }
 
-    // Auto hide after 4 seconds
     setTimeout(() => {
         toast.classList.remove('show');
         toast.classList.add('hidden');
     }, 4000);
 }
 
-// Close toast button
 document.addEventListener('DOMContentLoaded', function() {
     const toastClose = document.querySelector('.toast-close');
     if (toastClose) {
@@ -127,7 +121,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Update password strength indicator (for register form)
 function updatePasswordStrength(password) {
     const strengthBar = document.querySelector('.strength-bar');
     if (!strengthBar) return;
