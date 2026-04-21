@@ -25,18 +25,7 @@ class AuthManager {
             }
         } catch (error) {
             console.error('Error loading auth.json:', error);
-            const defaultUsers = [
-                {
-                    id: 1,
-                    firstName: 'Demo',
-                    lastName: 'User',
-                    email: 'demo@example.com',
-                    phone: '0901234567',
-                    password: '$2a$10$WvJBe6oLdPHjNqRKsGQ9He3JI0uN0OUbqHfZ6GhEcyI4o2DWpbQe.',
-                    createdAt: new Date().toISOString()
-                }
-            ];
-            localStorage.setItem(this.usersKey, JSON.stringify(defaultUsers));
+            localStorage.setItem(this.usersKey, JSON.stringify([]));
         }
     }
 
@@ -68,7 +57,7 @@ class AuthManager {
         if (users.find(u => u.email === email)) {
             return {
                 success: false,
-                message: 'Email đã được đăng ký!'
+                message: 'Email này đã được đăng ký'
             };
         }
 
