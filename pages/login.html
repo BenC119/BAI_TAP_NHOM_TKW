@@ -6,7 +6,6 @@
     <title>Đăng nhập | Vanguard Hypercars</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 28'><path d='M12 0L24 6.9282V20.7846L12 27.7128L0 20.7846V6.9282L12 0Z' fill='%2300e5ff'/><path d='M12 4.6188L3.99996 9.2376V18.4752L12 23.094L20 18.4752V9.2376L12 4.6188Z' fill='%230A0A0A'/><path d='M12 9.2376L7.99996 11.547V16.1658L12 18.4752L16 16.1658V11.547L12 9.2376Z' fill='%2300e5ff'/></svg>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/auth.css">
 </head>
@@ -14,9 +13,17 @@
 
     <header id="header">
         <div class="container flex-nav">
-            <a href="home.html" class="logo">
-                <span>VANGUARD HYPERCARS</span>
-            </a>
+            <div class="logo">
+                <svg width="20" height="24" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style="margin-right:8px;">
+                        <path d="M12 0L24 6.9282V20.7846L12 27.7128L0 20.7846V6.9282L12 0Z" fill="var(--accent-gold)" />
+                        <path d="M12 4.6188L3.99996 9.2376V18.4752L12 23.094L20 18.4752V9.2376L12 4.6188Z"
+                            fill="#050814" />
+                        <path d="M12 9.2376L7.99996 11.547V16.1658L12 18.4752L16 16.1658V11.547L12 9.2376Z"
+                            fill="var(--accent-gold)" />
+                    </svg>
+               VANGUARD<span>HYPERCARS</span>
+            </div>
 
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
@@ -68,10 +75,10 @@
 
                     <div class="form-options">
                         <label class="remember-me">
-                            <!-- <input type="checkbox" name="remember">
-                            <span>Ghi nhớ tôi</span> -->
+                            <input type="checkbox" name="remember">
+                            <span>Ghi nhớ tôi</span>
                         </label>
-                        <!-- <a href="#" class="forgot-password">Quên mật khẩu?</a> -->
+                        <a href="forgot-password.html" class="forgot-password">Quên mật khẩu?</a>
                     </div>
 
                     <button type="submit" class="btn-auth">Đăng nhập</button>
@@ -109,10 +116,18 @@
         </div>
     </main>
 
-    <footer class="site-footer">
+   <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-col">
                 <div class="logo">
+                    <svg width="20" height="24" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style="margin-right:8px;">
+                        <path d="M12 0L24 6.9282V20.7846L12 27.7128L0 20.7846V6.9282L12 0Z" fill="var(--accent-gold)" />
+                        <path d="M12 4.6188L3.99996 9.2376V18.4752L12 23.094L20 18.4752V9.2376L12 4.6188Z"
+                            fill="#050814" />
+                        <path d="M12 9.2376L7.99996 11.547V16.1658L12 18.4752L16 16.1658V11.547L12 9.2376Z"
+                            fill="var(--accent-gold)" />
+                    </svg>
                     VANGUARD<span>HYPERCARS</span>
                 </div>
             </div>
@@ -123,6 +138,7 @@
                     <li><a href="about.html">Giới thiệu</a></li>
                     <li><a href="cars.html">Bộ sưu tập xe</a></li>
                     <li><a href="contact.html">Liên hệ</a></li>
+                    <li><a href="news.html">Tin tức</a></li>
                 </ul>
             </div>
 
@@ -130,15 +146,18 @@
                 <h4>Liên hệ</h4>
                 <ul>
                     <li>Email: vip@vanguardhypercars.com</li>
-                    <li>Điện thoại: (123) 456-7890</li>
-                    <li>Địa chỉ: 123 Luxury Avenue, Elite City</li>
+                    <li>Điện thoại: 0123456789</li>
+                    <li>Địa chỉ: 120 Yen Lang, Ha Noi City</li>
                 </ul>
             </div>
 
             <div class="footer-col social-col">
+                
                 <div class="follow">
                     <h4>Theo dõi chúng tôi</h4>
                 </div>
+                
+
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
