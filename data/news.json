@@ -41,6 +41,20 @@
       "featured": true,
       "createdAt": "2026-03-28T08:00:00Z",
       "updatedAt": "2026-03-28T08:00:00Z"
+    },
+    {
+      "id": 4,
+      "title": "Đánh giá siêu xe Ferrari SF90 Stradale tại Việt Nam",
+      "slug": "ferrari-sf90-stradale-viet-nam-review",
+      "image": "images/Ferrari-SF90-Stradale.jpg",
+      "date": "2026-04-22",
+      "author": "Thượng Tâm",
+      "category": "Review",
+      "excerpt": "Ferrari SF90 Stradale tạo dấu ấn với 1.000 mã lực, tăng tốc 0-100 km/h trong khoảng 2,5 giây và công nghệ hybrid lấy cảm hứng từ F1.",
+      "content": "Ferrari SF90 Stradale là mẫu xe thương mại mạnh nhất của Ferrari với hệ truyền động hybrid gồm động cơ V8 tăng áp kép 4.0L và ba mô-tơ điện, cho tổng công suất 1.000 mã lực.",
+      "featured": true,
+      "createdAt": "2026-04-22T08:00:00Z",
+      "updatedAt": "2026-04-22T08:00:00Z"
     }
   ],
   "categories": [
