@@ -25,7 +25,18 @@ class AuthManager {
             }
         } catch (error) {
             console.error('Error loading auth.json:', error);
-            localStorage.setItem(this.usersKey, JSON.stringify([]));
+            const defaultUsers = [
+                {
+                    id: 1,
+                    firstName: 'Demo',
+                    lastName: 'User',
+                    email: 'demo@example.com',
+                    phone: '0901234567',
+                    password: '$2a$10$WvJBe6oLdPHjNqRKsGQ9He3JI0uN0OUbqHfZ6GhEcyI4o2DWpbQe.',
+                    createdAt: new Date().toISOString()
+                }
+            ];
+            localStorage.setItem(this.usersKey, JSON.stringify(defaultUsers));
         }
     }
 
