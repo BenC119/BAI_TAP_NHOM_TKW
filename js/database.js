@@ -5,7 +5,7 @@ const _FALLBACK_NEWS = {"news":[]};
 
 class Database {
     constructor() {
-        this.dataPath = '.';
+        this.dataPath = '../data';
        
         this._cache = {
             'product.json': _FALLBACK_PRODUCTS,
@@ -31,7 +31,38 @@ class Database {
 
     async getProducts() {
         const data = await this.read('product.json');
-        return data ? data.products : [];
+        const products = data ? data.products : [];
+        return this.normalizeProductImages(products);
+    }
+
+    normalizeProductImages(products) {
+        if (!Array.isArray(products)) return [];
+
+        const imageAliasMap = {
+            'images/McLaren Solus GT.webp': '../images/McLaren Solus GT.jpg',
+            'images/porsche 91 gt3 rs.jpg': '../images/Porsche 911 GT3 RS.jpg',
+            'images/Ferrari-SF90-Stradale.jpg': '../images/Ferrari-SF90-Stradale.jpg',
+            'images/Ferrari-296-GTB.jpg': '../images/Ferrari-296-GTB.jpg',
+            'images/Lamborghini Revuelto.avif': '../images/Lamborghini Revuelto.avif',
+            'images/Lamborghini Huracan Technica.jpg': '../images/Lamborghini Huracan Technica.jpg',
+            'images/McLaren 750s.webp': '../images/McLaren 750s.webp',
+            'images/Porsche_Taycan_Turbo_GT.jpg': '../images/Porsche_Taycan_Turbo_GT.jpg',
+            'images/Bugatti-Chiron-Super-Sport.jpg': '../images/Bugatti-Chiron-Super-Sport.jpg',
+            'images/Bugatti Bolide.jpg': '../images/Bugatti Bolide.jpg',
+        };
+
+        return products.map((product) => {
+            if (!product || typeof product !== 'object') return product;
+            let imagePath = product.image || '';
+
+            if (imageAliasMap[imagePath]) {
+                imagePath = imageAliasMap[imagePath];
+            } else if (typeof imagePath === 'string' && imagePath.startsWith('images/')) {
+                imagePath = `../${imagePath}`;
+            }
+
+            return { ...product, image: imagePath };
+        });
     }
 
     async getProductById(id) {
