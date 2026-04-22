@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Outer hexagon — cyan -->
+  <polygon points="50,2 95,26.5 95,73.5 50,98 5,73.5 5,26.5" fill="#00e5ff"/>
+  <!-- Middle hexagon — dark navy -->
+  <polygon points="50,16 83,34.5 83,65.5 50,84 17,65.5 17,34.5" fill="#0a1128"/>
+  <!-- Inner diamond — cyan -->
+  <polygon points="50,32 67,41.5 67,58.5 50,68 33,58.5 33,41.5" fill="#00e5ff"/>
+</svg>
