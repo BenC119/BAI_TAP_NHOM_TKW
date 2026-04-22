@@ -120,14 +120,15 @@ header.scrolled {
     cursor: pointer;
     flex-direction: column;
     gap: 5px;
-    z-index: 1001;
+    position: relative; 
+    z-index: 10000;
 }
 
 .hamburger .bar {
     width: 25px;
     height: 3px;
     border-radius: 3px;
-    background-color: var(--text-light);
+    background-color: #fff;
     transition: 0.3s;
 }
 
@@ -654,7 +655,6 @@ header.scrolled {
     background-color: var(--bg-darker);
     padding: 70px 0 20px;
     border-top: 1px solid var(--line-soft);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .footer-grid {
@@ -662,14 +662,13 @@ header.scrolled {
     grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
     gap: 60px;
     margin-bottom: 50px;
-    max-width: 100%;
-    padding: 0 5%;
 }
 
 .footer-col h4 {
     color: var(--accent-gold);
     margin: 0 0 25px 0;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .footer-col ul {
@@ -715,7 +714,7 @@ header.scrolled {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: var(--card-bg);
+    background-color: var(--bg-dark);
     color: var(--text-light);
     border-radius: 50%;
     border: 1px solid var(--line-soft);
@@ -842,22 +841,20 @@ header.scrolled {
 
 
 @media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
     header .container {
         width: 95%; 
     }
 
-  
-    .flex-nav {
-       display: flex;
-        justify-content: space-between;
+    .hamburger {
+        display: flex;
+        margin-left: auto; 
     }
+
     header nav {
-        position: absolute; 
+        position: absolute;
+        pointer-events: none;
     }
+
     .nav-links {
         position: fixed;
         right: -100%;
@@ -866,13 +863,13 @@ header.scrolled {
         height: 100vh;
         background: rgba(10, 17, 40, 0.98);
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+       
         padding: 88px 28px 28px;
-        gap: 0;
+      
         transition: right 0.35s ease;
-     
+        z-index: 9999;
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.45);
+        pointer-events: auto;
     }
 
     .nav-links.active {
@@ -896,14 +893,13 @@ header.scrolled {
     .nav-links li {
         margin: 0;
         width: 100%;
-        border-bottom: 1px solid rgba(138, 155, 184, 0.18);
-        padding: 14px 0;   
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 15px 0;   
     }
 
     .nav-links a {
         font-size: 13px;
         width: 100%;
-        
     }
 
     .section-title {
@@ -1095,8 +1091,26 @@ header.scrolled {
 
 @media (min-width: 1920px) {
  
-    .container {
-        max-width: 1700px; 
+   .container {
+        max-width: 1700px;
+    }
+  
+    header {
+        padding: 35px 0; 
+    }
+    header.scrolled {
+        padding: 18px 0;
+    }
+    .logo {
+        font-size: 30px;
+        gap: 15px; 
+    }
+    .nav-links {
+        gap: 45px;
+    }
+    .nav-links a {
+        font-size: 15px; 
+        letter-spacing: 2px;
     }
 
  
@@ -1127,4 +1141,34 @@ header.scrolled {
         box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 
                     0 0 40px rgba(0, 229, 255, 0.2);
     }
+    .site-footer { 
+        padding: 100px 0 40px; 
+    }
+    .footer-grid { 
+        gap: 100px; 
+    }
+    .footer-col h4 { 
+        font-size: 1.4rem; 
+        margin-bottom: 35px; 
+        letter-spacing: 2px; 
+    }
+    .footer-col ul li { 
+        margin-bottom: 22px;
+     }
+    .footer-col ul li a, .footer-col p, .footer-col li { 
+        font-size: 1.15rem; 
+        line-height: 1.8; 
+    }
+    .social-links { 
+        gap: 20px; 
+    }
+    .social-links a { 
+        width: 55px; 
+        height: 55px; 
+        font-size: 1.3rem; 
+    }
+    .footer-bottom { 
+        font-size: 1.1rem; 
+        padding-top: 40px; 
+        margin-top: 60px; }
 }
