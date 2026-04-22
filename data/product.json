@@ -7,7 +7,7 @@
       "category": "Hypercar",
       "price": 507000,
       "year": 2023,
-      "image": "images/Ferrari-SF90-Stradale.jpg",
+      "image": "../images/Ferrari-SF90-Stradale.jpg",
       "description": "Đỉnh cao công nghệ hybrid của Ferrari — SF90 Stradale kết hợp động cơ V8 Twin-Turbo 3.9L với ba mô-tơ điện cho sức mạnh tổng hợp 986 mã lực. Đây là siêu xe mạnh mẽ nhất từ trước đến nay xuất xưởng từ Maranello, sở hữu hệ thống dẫn động 4 bánh toàn phần (4WD), cầu nối hoàn hảo giữa công nghệ đua xe F1 và đường phố. Phiên bản Assetto Fiorano bổ sung thêm gói khí động học và lốp Michelin Pilot Sport Cup 2R.",
       "specifications": {
         "engine": "3.9L V8 Twin-Turbo + 3 EM Hybrid",
@@ -27,7 +27,7 @@
       "category": "Sports Car",
       "price": 322000,
       "year": 2023,
-      "image": "images/Ferrari-296-GTB.jpg",
+      "image": "../images/Ferrari-296-GTB.jpg",
       "description": "Ferrari 296 GTB đánh dấu sự trở lại của động cơ V6 huyền thoại tại Maranello sau hơn 50 năm, kết hợp cùng mô-tơ điện cho tổng công suất 830 mã lực. Kiểu dáng fastback hiện đại lấy cảm hứng từ những huyền thoại như 250 LM, cùng hệ thống khí động học chủ động và khung gầm nhôm mang lại cảm giác lái hoàn hảo. 296 GTB là lý luận rõ ràng nhất rằng tương lai của hypercar Italia không thể rực rỡ hơn.",
       "specifications": {
         "engine": "3.0L V6 Twin-Turbo + 1 EM Hybrid",
@@ -47,7 +47,7 @@
       "category": "Hypercar",
       "price": 600000,
       "year": 2024,
-      "image": "images/Lamborghini Revuelto.avif",
+      "image": "../images/Lamborghini Revuelto.avif",
       "description": "Kế thừa ngai vàng của Aventador, Lamborghini Revuelto là siêu xe hybrid V12 đầu tiên trong lịch sử Sant'Agata Bolognese. Động cơ V12 hút khí tự nhiên huyền thoại kết hợp cùng ba mô-tơ điện cho sức mạnh 1.015 mã lực — và lần đầu tiên một Lamborghini có hộp số ly hợp kép (DCT) 8 cấp. Revuelto là bản tuyên ngôn táo bạo về tương lai của những chiếc xe \"toro\" Sant'Agata.",
       "specifications": {
         "engine": "6.5L V12 N/A + 3 EM Hybrid",
@@ -67,7 +67,7 @@
       "category": "Sports Car",
       "price": 274000,
       "year": 2023,
-      "image": "images/Lamborghini Huracan Technica.jpg",
+      "image": "../images/Lamborghini Huracan Technica.jpg",
       "description": "Lamborghini Huracán Tecnica là đỉnh cao của dòng Huracán — một cú chốt hoàn hảo trước khi kỷ nguyên V10 hút khí tự nhiên thuần túy khép lại. Hệ thống dẫn động cầu sau kết hợp với LDVI (Lamborghini Dinamica Veicolo Integrata) cho cảm giác lái sắc nét, dữ dội đặc trưng của người Ý. Thân xe theo thiết kế Aerodynamica Lamborghini mang lại lực ép chiều dọc đáng kể mà không cần cánh gió nổi bật.",
       "specifications": {
         "engine": "5.2L V10 N/A",
@@ -87,7 +87,7 @@
       "category": "Hypercar",
       "price": 330000,
       "year": 2023,
-      "image": "images/McLaren 750s.webp",
+      "image": "../images/McLaren 750s.webp",
       "description": "McLaren 750S là sự tiến hóa đỉnh cao của dòng Super Series — nhẹ hơn, mạnh hơn và sắc nét hơn người tiền nhiệm 720S. Động cơ V8 Twin-Turbo 4.0L được nâng cấp lên 750 mã lực, kết hợp với thân xe carbon fiber siêu nhẹ chỉ 1.277 kg. Hệ thống kiểm soát chủ động Proactive Chassis Control III cùng đèn Full-LED mang thiết kế định hình lại chuẩn mực của một supercar hiện đại.",
       "specifications": {
         "engine": "4.0L V8 Twin-Turbo",
@@ -107,7 +107,7 @@
       "category": "Hypercar",
       "price": 3500000,
       "year": 2024,
-      "image": "images/McLaren Solus GT.jpg",
+      "image": "../images/McLaren Solus GT.jpg",
       "description": "McLaren Solus GT là hiện thân của triết học \"One\" — một chiếc xe đua track-only với cửa kiểu canopy như buồng lái máy bay chiến đấu, lấy cảm hứng từ concept Vision Gran Turismo. Động cơ V10 hút khí tự nhiên 5.0L quay tới 10.000 vòng/phút phát ra 840 mã lực, đẩy chiếc xe chỉ nặng 993 kg (khô) vào những cú vào cua với hơn 3G gia tốc ngang. Chỉ 25 chiếc được sản xuất trên toàn thế giới.",
       "specifications": {
         "engine": "5.0L V10 N/A",
@@ -127,7 +127,7 @@
       "category": "Sports Car",
       "price": 225000,
       "year": 2023,
-      "image": "images/Porsche 911 GT3 RS.jpg",
+      "image": "../images/Porsche 911 GT3 RS.jpg",
       "description": "Porsche 911 GT3 RS là phiên bản đường phố gần nhất với một chiếc xe đua GT. Động cơ Flat-6 4.0L hút khí tự nhiên cùng hộp số PDK 7 cấp là sự cộng sinh hoàn hảo, trong khi hệ thống khí động học chủ động DRS (Drag Reduction System) có thể thay đổi lực ép từ 409 kg đến âm. Từng vòng Nürburgring của chiếc GT3 RS là một minh chứng sống về triết học Porsche — kỹ nghệ phục vụ cảm xúc.",
       "specifications": {
         "engine": "4.0L Flat-6 N/A",
@@ -147,7 +147,7 @@
       "category": "Sports Car",
       "price": 235000,
       "year": 2024,
-      "image": "images/Porsche_Taycan_Turbo_GT.jpg",
+      "image": "../images/Porsche_Taycan_Turbo_GT.jpg",
       "description": "Porsche Taycan Turbo GT là siêu xe điện mạnh nhất từ trước đến nay của Stuttgart — 1.092 mã lực từ hai mô-tơ điện với công nghệ Overboost, tăng tốc 0–100 km/h chỉ trong 2.2 giây. Sở hữu kỷ lục vòng đua Nürburgring cho xe điện 4 cửa, Taycan Turbo GT chứng minh rằng tương lai thuần điện không đánh đổi cảm xúc lái — đây chính là thông điệp Porsche gửi đến cả ngành công nghiệp.",
       "specifications": {
         "engine": "Dual Electric Motor (All-Electric)",
@@ -167,7 +167,7 @@
       "category": "Hypercar",
       "price": 3900000,
       "year": 2023,
-      "image": "images/Bugatti-Chiron-Super-Sport.jpg",
+      "image": "../images/Bugatti-Chiron-Super-Sport.jpg",
       "description": "Bugatti Chiron Super Sport là tuyên ngôn tốc độ tối thượng từ Molsheim — phiên bản kỷ niệm dựa trên Chiron Super Sport 300+ đã phá vỡ ngưỡng 490 km/h. Khối động cơ W16 8.0L Quad-Turbo huyền thoại cho ra 1.600 mã lực, đi kèm thân xe dài hơn 25 cm và bộ khuếch tán khí phía sau giảm tới 40% lực kéo ở tốc độ cao. Chỉ 60 chiếc được sản xuất, mỗi chiếc là một tác phẩm thủ công thuần túy.",
       "specifications": {
         "engine": "8.0L W16 Quad-Turbo",
@@ -187,7 +187,7 @@
       "category": "Hypercar",
       "price": 4700000,
       "year": 2024,
-      "image": "images/Bugatti Bolide.jpg",
+      "image": "../images/Bugatti Bolide.jpg",
       "description": "Bugatti Bolide là câu trả lời cho câu hỏi: \"Chiếc Bugatti mạnh nhất có thể trông như thế nào?\" Track-only, cực đoan và không nhân nhượng — W16 Quad-Turbo 1.850 mã lực đẩy khối xe chỉ 1.450 kg đạt tốc độ ước tính hơn 500 km/h trên đường thẳng. Khung gầm titan và carbon fiber nguyên khối, cùng lốp Michelin Cup 2R đặc chủng. Chỉ 40 chiếc tồn tại, mỗi chiếc được định danh là kỷ lục chờ được phá vỡ.",
       "specifications": {
         "engine": "8.0L W16 Quad-Turbo",
