@@ -103,7 +103,9 @@ header.scrolled {
     cursor: pointer; 
     flex-direction: column; 
     gap: 5px; 
-    z-index: 1001; 
+    position: relative; 
+    
+    z-index: 10000;
 }
 
 .hamburger .bar { 
@@ -498,6 +500,19 @@ header.scrolled {
 
 
 @media (max-width: 992px) {
+     .logo {
+        font-size: 14px;
+        letter-spacing: 1.1px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
     .contact-grid { 
         grid-template-columns: 1fr; 
         gap: 40px; 
@@ -571,6 +586,7 @@ header.scrolled {
         transition: 0.35s;
         z-index: 9999;
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.45); 
+        pointer-events: auto;
     }
     .nav-links.active { 
         right: 0; 
