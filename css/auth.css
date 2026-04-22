@@ -8,6 +8,7 @@
     --accent-gold: #00e5ff;
     --input-bg: #0f1a33;
     --border-color: #1e3a5f;
+    --line-soft: rgba(255, 255, 255, 0.08);
     --error-color: #ff4757;
     --success-color: #2ed573;
 }
@@ -18,6 +19,10 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
+}
+
+html {
+    overflow-y: scroll;
 }
 
 body {
@@ -103,7 +108,8 @@ header.scrolled {
     cursor: pointer;
     flex-direction: column;
     gap: 5px;
-    z-index: 1001;
+    position: relative;
+    z-index: 10000;
 }
 
 .hamburger .bar {
@@ -518,7 +524,7 @@ header.scrolled {
 .site-footer {
     background-color: var(--bg-darker);
     padding: 70px 0 20px;
-    border-top: 1px solid #121f3f;
+    border-top: 1px solid var(--line-soft);
 }
 
 .footer-grid {
@@ -526,13 +532,12 @@ header.scrolled {
     grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
     gap: 60px;
     margin-bottom: 50px;
-    max-width: 100%;
-    padding: 0 5%;
 }
 
 .footer-col h4 {
     color: var(--accent-gold);
     margin-bottom: 25px;
+    white-space: nowrap;
 }
 
 .footer-col ul {
@@ -558,13 +563,13 @@ header.scrolled {
 .footer-col.social-col {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
 }
 
 .social-links {
     display: flex;
     gap: 15px;
-    justify-content: flex-end;
+    justify-content: flex-start;
     width: 100%;
 }
 
@@ -574,9 +579,10 @@ header.scrolled {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: var(--card-bg);
+    background-color: var(--bg-dark);
     color: var(--text-light);
     border-radius: 50%;
+    border: 1px solid var(--line-soft);
     text-decoration: none;
     transition: 0.3s;
 }
@@ -584,14 +590,12 @@ header.scrolled {
 .social-links a:hover {
     background-color: var(--accent-gold);
     color: #000;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 229, 255, 0.4);
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 25px;
-    border-top: 1px solid #121f3f;
+    border-top: 1px solid var(--line-soft);
     font-size: 0.85rem;
     color: var(--text-muted);
 }
@@ -712,20 +716,18 @@ header.scrolled {
 
     .nav-links {
         position: fixed;
-        top: 0;
         right: -100%;
-        width: min(82%, 320px);
+        top: 0;
+        width: 320px !important; 
         height: 100vh;
-        background: rgba(30, 32, 34, 0.98);
+        background: rgba(10, 17, 40, 0.98);
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: 0.4s;
-        gap: 30px;
-        z-index: 1000;
-        white-space: normal;
-        overflow-y: auto;
-        padding: 40px 20px;
+        padding: 88px 28px 28px;
+        /* gap: 0; */
+        transition: right 0.35s ease;
+        z-index: 9999;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.45);
+        pointer-events: auto; 
     }
 
     .nav-links.active {
@@ -735,13 +737,14 @@ header.scrolled {
     .nav-links li {
         margin: 0;
         width: 100%;
-        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 15px 0;
+        text-align: left;
     }
 
     .nav-links a {
-        display: inline-block;
-        font-size: 14px;
-        line-height: 1.4;
+        font-size: 13px;
+        width: 100%;
     }
 
     .logo {
@@ -750,7 +753,7 @@ header.scrolled {
 
     .auth-container {
         padding: 100px 15px 36px;
-        align-items: flex-start;
+        /* align-items: flex-start; */
     }
 
     .auth-wrapper {
@@ -906,5 +909,63 @@ header.scrolled {
     .toast {
         min-width: auto;
         width: calc(100% - 40px);
+    }
+}
+
+@media (min-width: 1920px) {
+    .container { 
+        max-width: 1700px; 
+    }
+  
+    
+    header { 
+        padding: 35px 0; 
+    }
+    header.scrolled { 
+        padding: 18px 0; 
+    }
+
+    .logo {
+         font-size: 30px; 
+         gap: 15px; 
+    }
+    .nav-links { 
+        gap: 45px; 
+    }
+    .nav-links a { 
+        font-size: 15px; 
+        letter-spacing: 2px; 
+    }
+
+    .site-footer { 
+        padding: 100px 0 40px; 
+    }
+    .footer-grid { 
+        gap: 100px; 
+    }
+    .footer-col h4 { 
+        font-size: 1.4rem; 
+        margin-bottom: 35px; 
+        letter-spacing: 2px; 
+    }
+    .footer-col ul li {
+         margin-bottom: 22px; 
+    }
+    .footer-col ul li a, .footer-col p, .footer-col li { 
+        font-size: 1.15rem; 
+        line-height: 1.8; 
+    }
+    .social-links { 
+        gap: 20px; 
+    }
+    .social-links a { 
+        width: 55px; 
+        height: 55px; 
+        font-size: 1.3rem; 
+    }
+    .footer-bottom { 
+        font-size: 1.1rem; 
+        padding-top: 40px; 
+        margin-top: 60px; 
     }
 }
