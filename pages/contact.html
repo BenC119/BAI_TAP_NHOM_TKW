@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vanguard HyperCars | Liên hệ</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="contact.css">
 </head>
 <body>
 
@@ -46,92 +48,178 @@
         </div>
     </header>
 
-    <section id="contact-hero" class="contact-hero section-padding">
+    <section id="contact-hero" class="contact-hero">
         <div class="container">
-            <div class="contact-hero-content fade-in">
-                <div class="yellow-dot"></div>
-                <h1>LIÊN HỆ</h1>
-                <p>Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất</p>
+            <div class="contact-hero-panel fade-in">
+                <div class="contact-hero-content">
+                    <h1>Kết nối <span>Vanguard</span></h1>
+                    <p>Mạng lưới hỗ trợ toàn cầu, chúng tôi sẵn sàng lắng nghe bạn.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact-details" class="contact-details section-padding">
         <div class="container contact-grid">
-            <div class="contact-info fade-in">
-                <h2 class="contact-title">Thông tin liên hệ</h2>
-                
-                <div class="info-item">
-                    <i class="fa-regular fa-envelope"></i>
-                    <div class="info-content">
-                        <h3>Email</h3>
-                        <p>contact@vanguardhypercars.com</p>
-                    </div>
+            <div class="contact-info-panel fade-in">
+                <div class="contact-intro-card">
+                    <div class="accent-line"></div>
+                    <p>Vui lòng điền đầy đủ thông tin vào biểu mẫu. Bộ phận chuyên trách của Vanguard sẽ phản hồi trong vòng 24 giờ làm việc.</p>
                 </div>
-                
-                <div class="info-item">
-                    <i class="fa-solid fa-phone-volume"></i>
-                    <div class="info-content">
-                        <h3>Điện thoại</h3>
-                        <p>(123) 456-7890</p>
-                    </div>
+
+                <div class="contact-showroom-card">
+                    <img src="images/contact-left-banner.webp" alt="Không gian showroom Vanguard HyperCars">
                 </div>
-                
-                <div class="info-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <div class="info-content">
-                        <h3>Địa chỉ</h3>
-                        <p>120 Yên Lãng, Phường Thịnh Quang, Đống Đa, Hà Nội</p>
+
+                <div class="contact-quick-info">
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <div class="info-content">
+                            <h3>Hotline VIP</h3>
+                            <p>0912 345 678</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="info-item">
-                    <i class="fa-regular fa-calendar"></i>
-                    <div class="info-content">
-                        <h3>Giờ làm việc</h3>
-                        <p>Thứ Hai - Thứ Sáu: 9:00 - 18:00</p>
-                        <p>Thứ Bảy: 10:00 - 17:00</p>
-                        <p>Chủ Nhật: Đóng cửa</p>
+
+                    <div class="info-item">
+                        <i class="fa-regular fa-envelope"></i>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <p>vip@vanguardhypercars.com</p>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <div class="contact-form-wrapper fade-in">
-                <div class="form-header">
-                    <div class="yellow-dot"></div>
-                    <h2 class="contact-title">Gửi tin nhắn cho chúng tôi</h2>
-                </div>
                 <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Họ và tên</label>
-                        <input type="text" id="name" name="name" required>
+                    <div class="form-group form-group-select">
+                        <label for="recipient">Recipient</label>
+                        <div class="select-field">
+                            <select id="recipient" name="recipient">
+                                <option value="press-office-vanguard">Press Office Vanguard</option>
+                                <option value="client-relations">Client Relations Vanguard</option>
+                                <option value="showroom-concierge">Showroom Concierge Vanguard</option>
+                            </select>
+                        </div>
                     </div>
-                    
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">Họ*</label>
+                            <input type="text" id="first-name" name="first-name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="last-name">Tên*</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                    </div>
+
                     <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email">Email*</label>
                         <input type="email" id="email" name="email" required>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Số điện thoại</label>
-                        <input type="tel" id="phone" name="phone">
+
+                    <div class="form-group form-group-select">
+                        <label for="project">Country or Region*</label>
+                      
+                        <div class="select-field">
+                            <select id="project" name="project" required>
+                                <option value="">Chọn quốc gia hoặc khu vực</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Austria">Austria</option>
+                                <option value="Bahrain">Bahrain</option>
+                                <option value="Bangladesh">Bangladesh</option>
+                                <option value="Belgium">Belgium</option>
+                                <option value="Brazil">Brazil</option>
+                                <option value="Brunei">Brunei</option>
+                                <option value="Cambodia">Campuchia</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Chile">Chile</option>
+                                <option value="China">Trung Quốc</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="Czechia">Czechia</option>
+                                <option value="Denmark">Denmark</option>
+                                <option value="Egypt">Egypt</option>
+                                <option value="Finland">Finland</option>
+                                <option value="France">France</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Greece">Greece</option>
+                                <option value="Hong Kong SAR">Hong Kong (SAR)</option>
+                                <option value="India">Ấn Độ</option>
+                                <option value="Indonesia">Indonesia</option>
+                                <option value="Ireland">Ireland</option>
+                                <option value="Israel">Israel</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Japan">Nhật Bản</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="Kuwait">Kuwait</option>
+                                <option value="Laos">Lào</option>
+                                <option value="Macau SAR">Macau (SAR)</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="Morocco">Morocco</option>
+                                <option value="Myanmar">Myanmar</option>
+                                <option value="Nepal">Nepal</option>
+                                <option value="Netherlands">Netherlands</option>
+                                <option value="New Zealand">New Zealand</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="Norway">Norway</option>
+                                <option value="Oman">Oman</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="Peru">Peru</option>
+                                <option value="Philippines">Philippines</option>
+                                <option value="Poland">Poland</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Qatar">Qatar</option>
+                                <option value="Russia">Russia</option>
+                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                <option value="Singapore">Singapore</option>
+                                <option value="South Africa">South Africa</option>
+                                <option value="South Korea">Hàn Quốc</option>
+                                <option value="Spain">Spain</option>
+                                <option value="Sri Lanka">Sri Lanka</option>
+                                <option value="Sweden">Sweden</option>
+                                <option value="Switzerland">Switzerland</option>
+                                <option value="Taiwan">Đài Loan</option>
+                                <option value="Thailand">Thái Lan</option>
+                                <option value="Turkey">Turkey</option>
+                                <option value="United Arab Emirates">United Arab Emirates</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="United States">United States</option>
+                                <option value="Viet Nam">Việt Nam</option>
+                            </select>
+                        </div>
                     </div>
-                    
+
                     <div class="form-group">
-                        <label for="subject">Chủ đề</label>
-                        <select id="subject" name="subject">
-                            <option value="Thông tin chung">Thông tin chung</option>
-                            <option value="Tư vấn mua xe">Tư vấn mua xe</option>
-                            <option value="Hỗ trợ kỹ thuật">Hỗ trợ kỹ thuật</option>
-                        </select>
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address">
                     </div>
-                    
+
                     <div class="form-group">
-                        <label for="message">Tin nhắn</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message">Nội dung*</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Nội dung*" required></textarea>
                     </div>
-                    
-                    <button type="submit" class="btn-primary" style="margin-top: 10px; border: none; font-family: inherit; font-size: 1rem; cursor: pointer;">Gửi tin nhắn</button>
+
+                    <label class="policy-check">
+                        <input type="checkbox" name="policy" required>
+                        <span>Đọc và chấp nhận <strong>Chính sách bảo mật</strong></span>
+                    </label>
+
+                    <label class="captcha-box">
+                        <div class="captcha-check">
+                            <input type="checkbox" name="captcha" required>
+                            <span>Tôi không phải là robot</span>
+                        </div>
+                        <div class="captcha-brand">
+                            <strong>reCAPTCHA</strong>
+                            <small>Privacy - Terms</small>
+                        </div>
+                    </label>
+
+                    <button type="submit" class="contact-submit-btn">GỬI YÊU CẦU</button>
                 </form>
             </div>
         </div>
