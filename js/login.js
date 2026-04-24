@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            if (password.length < 6) {
-                showError('login-password', 'Mật khẩu phải có ít nhất 6 ký tự');
+            if (password.length < 8) {
+                showError('login-password', 'Mật khẩu phải có ít nhất 8 ký tự');
                 return;
             }
 
