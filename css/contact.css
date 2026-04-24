@@ -712,3 +712,96 @@ header.scrolled {
         margin-top: 60px; 
     }
 }
+
+.user-profile-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.user-profile-dropdown {
+    position: relative;
+}
+
+.user-profile-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 229, 255, 0.08);
+    border: 1px solid var(--accent-gold);
+    border-radius: 6px;
+    color: var(--text-light);
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+}
+
+.user-profile-btn:hover {
+    background: rgba(0, 229, 255, 0.16);
+    box-shadow: 0 0 16px rgba(0, 229, 255, 0.22);
+}
+
+.user-profile-btn .fa-chevron-down {
+    font-size: 11px;
+    transition: transform 0.25s ease;
+}
+
+.user-profile-btn.active .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.user-profile-dropdown .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    min-width: 180px;
+    background: #0f1d47;
+    border: 1px solid var(--accent-gold);
+    border-radius: 8px;
+    list-style: none;
+    z-index: 1200;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.user-profile-dropdown .dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    color: var(--text-light);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background: rgba(0, 229, 255, 0.12);
+    color: var(--accent-gold);
+    text-shadow: none;
+}
+
+.dropdown-item i {
+    width: 16px;
+    text-align: center;
+}
