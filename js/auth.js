@@ -1,7 +1,7 @@
 class AuthManager {
     constructor() {
-        this.usersKey = 'vanguard_users';
-        this.currentUserKey = 'vanguard_current_user';
+        this.usersKey = 'user_list';
+        this.currentUserKey = 'current_user';
         this.initializeUsers();
     }
 

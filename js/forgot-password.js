@@ -533,12 +533,12 @@
             users[idx]._plainPassword = newPassword;
             users[idx].updatedAt = new Date().toISOString();
 
-            localStorage.setItem('vanguard_users', JSON.stringify(users));
+            localStorage.setItem('user_list', JSON.stringify(users));
 
             // If the updated user is the currently logged-in user, log them out
             const currentUser = auth.getCurrentUser();
             if (currentUser && currentUser.email.toLowerCase() === email.toLowerCase()) {
-                localStorage.removeItem('vanguard_current_user');
+                localStorage.removeItem('current_user');
             }
 
             return true;
